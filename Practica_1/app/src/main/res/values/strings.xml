@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">Practica_1</string>
+    <string name="app_name">Práctica_1 (Juan Pablo)</string>
+    <string name="title_form">Formulario De Registro</string>
+    <string name="name">Nombre completo:</string>
+    <string name="required_field">*Campo requerido</string>
+    <string name="email">Correo electrónico:</string>
+    <string name="password">Contraseña:</string>
+    <string name="rep_password">Repita la contraseña:</string>
+    <string name="genre">Género:</string>
+    <string name="female">Femenino</string>
+    <string name="male">Masculino</string>
+    <string name="other">Otros</string>
 </resources>
