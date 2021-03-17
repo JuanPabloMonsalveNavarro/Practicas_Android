@@ -45,9 +45,7 @@ class MainActivity : AppCompatActivity() {
                     mainBinding.dateButton.setText(birthDay)
                 }
 
-        mainBinding.dateButton.setOnClickListener {
-            DatePickerDialog(this, dateSetListener, year, month, day).show()
-        }
+        mainBinding.dateButton.setOnClickListener { DatePickerDialog(this, dateSetListener, year, month, day).show() }
 
         //Acciones a realizar cuando se de click en el botón Guardar
         mainBinding.saveButton.setOnClickListener {
