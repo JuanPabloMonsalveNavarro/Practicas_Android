@@ -10,4 +10,29 @@
     <string name="female">Femenino</string>
     <string name="male">Masculino</string>
     <string name="other">Otros</string>
+    <string name="hobbies">Pasatiempos:</string>
+    <string name="sport">Deporte</string>
+    <string name="read">Leer</string>
+    <string name="eat">Comer</string>
+    <string name="dance">Bailar</string>
+    <string name="pick_date">Fecha de nacimiento</string>
+    <string name="save">Guardar</string>
+    <string name="info_text">Información del Usuario:</string>
+    <string name="print_info" />
+    <string name="city">Ciudad de nacimiento:</string>
+    <string name="password_error">*La contraseña no coincide</string>
+    <string name="email_error">*Debe dijitar un correo electrónico</string>
+    <string name="name_error">*Debe dijitar un nombre</string>
+    <string name="password_error_null">*Debe dijitar una contraseña</string>
+    <string name="repPassword_error_null">*Debe repetir la contraseña</string>
+    <string name="hobbies_error">*Debe seleccionar un pasatiempo</string>
+    <string name="date_error">*Debe ingresar una fecha de nacimiento</string>
+    <string name="city_error">*Debe ingresar una ciudad de nacimiento</string>
+    <string-array name="city_list">
+        <item>Medellin</item>
+        <item>Bogotá</item>
+        <item>Cali</item>
+        <item>Barranquilla</item>
+        <item>Pereira</item>
+    </string-array>
 </resources>
