@@ -59,13 +59,14 @@ class MainActivity : AppCompatActivity() {
                                 else (if (mainBinding.maleRadioButton.isChecked) getString(R.string.male)
                                         else getString(R.string.other))
 
-            var hobbies = if (mainBinding.sportCheckBox.isChecked) getString(R.string.sport) else EMPTY
-                hobbies = hobbies + SPACE + if (mainBinding.readCheckBox.isChecked) getString(R.string.read) else EMPTY
-                hobbies = hobbies + SPACE + if (mainBinding.eatCheckBox.isChecked) getString(R.string.eat) else EMPTY
-                hobbies = hobbies + SPACE + if (mainBinding.danceCheckBox.isChecked) getString(R.string.dance) else EMPTY
+            var hobbies = if (mainBinding.sportCheckBox.isChecked) getString(R.string.sport) + SPACE else EMPTY
+                hobbies = if (mainBinding.readCheckBox.isChecked) hobbies + getString(R.string.read) + SPACE else hobbies + EMPTY
+                hobbies = if (mainBinding.eatCheckBox.isChecked) hobbies + getString(R.string.eat) + SPACE else hobbies + EMPTY
+                hobbies = if (mainBinding.danceCheckBox.isChecked) hobbies + getString(R.string.dance) else hobbies + EMPTY
 
             val city = mainBinding.birthSpinner.selectedItem.toString()
 
+            //Verificación de que ningún campo esté vacío y de que las contraseñas coincidan entre sí
             if(name.isEmpty()) {
                 mainBinding.nameTextInputLayout.error = getString(R.string.name_error)
             } else { if(email.isEmpty()){
@@ -74,7 +75,10 @@ class MainActivity : AppCompatActivity() {
                         mainBinding.passwordTextInputLayout.error = getString(R.string.password_error_null)
                     } else { if(repPassword.isEmpty()){
                             mainBinding.repPasswordInputLayout.error = getString(R.string.repPassword_error_null)
-                        } else { if(hobbies.isEmpty()) {
+                        } else { if(!mainBinding.sportCheckBox.isChecked and
+                                    !mainBinding.readCheckBox.isChecked and
+                                    !mainBinding.eatCheckBox.isChecked and
+                                    !mainBinding.danceCheckBox.isChecked){
                                 Toast.makeText(this, getString(R.string.hobbies_error), Toast.LENGTH_LONG).show()
                             } else { if(password == repPassword){
                                     saveUser(name, email, password, genre, hobbies, birthDay, city)
@@ -94,12 +98,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    //Función que guarda y crea un nuvevo usuario con sus atributos
     private fun saveUser(name: String, email: String, password: String, genre: String, hobbies: String, birthday: String, city: String) {
         var newUser = User(name, email, password, genre, hobbies, birthday, city)
         users.add(newUser)
         printUserData()
     }
 
+    //Función que permite crear el string que se mostrará en pantalla con los atributos de un usuario
     private fun printUserData() {
         var info = ""
         for(user in users) {
@@ -108,6 +114,7 @@ class MainActivity : AppCompatActivity() {
         mainBinding.printTextView.text = info
     }
 
+    //Función que permite limpiar los campos después de haber creado un usuario
     private fun cleanViews() {
         with(mainBinding){
             nameEditText.setText(EMPTY)

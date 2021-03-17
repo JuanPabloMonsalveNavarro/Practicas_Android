@@ -200,13 +200,29 @@
                 android:textColor="#4a4de7" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/date_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
+            android:id="@+id/date_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_marginTop="16dp"
-            android:backgroundTint="#4a4de7"
-            android:text="@string/pick_date" />
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/date_tex_tview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="@string/date_text_view"
+                android:textColor="#4a4de7" />
+
+            <Button
+                android:id="@+id/date_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#4a4de7"
+                android:text="@string/pick_date" />
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/city_linear_layout"
@@ -219,14 +235,19 @@
                 android:id="@+id/city_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/city" />
+                android:layout_marginEnd="16dp"
+                android:text="@string/city"
+                android:textColor="#4a4de7" />
 
             <Spinner
                 android:id="@+id/birth_spinner"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="80dp"
                 android:layout_weight="1"
-                android:entries="@array/city_list" />
+                android:background="#7ea6f4"
+                android:entries="@array/city_list"
+                android:textAlignment="center" />
 
         </LinearLayout>
 

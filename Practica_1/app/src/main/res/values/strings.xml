@@ -15,7 +15,7 @@
     <string name="read">Leer</string>
     <string name="eat">Comer</string>
     <string name="dance">Bailar</string>
-    <string name="pick_date">Fecha de nacimiento</string>
+    <string name="pick_date">Ingresar fecha</string>
     <string name="save">Guardar</string>
     <string name="info_text">Información del Usuario:</string>
     <string name="print_info" />
@@ -28,6 +28,7 @@
     <string name="hobbies_error">*Debe seleccionar un pasatiempo</string>
     <string name="date_error">*Debe ingresar una fecha de nacimiento</string>
     <string name="city_error">*Debe ingresar una ciudad de nacimiento</string>
+    <string name="date_text_view">Fecha de nacimiento:</string>
     <string-array name="city_list">
         <item>Medellin</item>
         <item>Bogotá</item>
