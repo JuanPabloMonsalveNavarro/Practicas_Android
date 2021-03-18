@@ -17,7 +17,7 @@
     <string name="dance">Bailar</string>
     <string name="pick_date">Ingresar fecha</string>
     <string name="save">Guardar</string>
-    <string name="info_text">Información del Usuario:</string>
+    <string name="info_text">Información del Usuario</string>
     <string name="print_info" />
     <string name="city">Ciudad de nacimiento:</string>
     <string name="password_error">*La contraseña no coincide</string>
