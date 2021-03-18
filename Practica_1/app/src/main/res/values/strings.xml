@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Práctica_1 (Juan Pablo)</string>
+    <string name="app_name">Práctica_1 (Juan Pablo Monsalve)</string>
     <string name="title_form">Formulario De Registro</string>
     <string name="name">Nombre completo:</string>
     <string name="required_field">*Campo requerido</string>

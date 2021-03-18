@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">Practica_1_conversor_de_moneda</string>
+    <string name="app_name">Practica_1 (Juan Pablo Monsalve)</string>
+    <string name="main_title"><b>CONVERSOR DE MONEDA</b></string>
+    <string name="saco_de_dinero">saco_de_dinero</string>
+    <string name="input_title">Ingrese el valor:</string>
+    <string name="value">$</string>
+    <string name="invert_image">invert_image</string>
+    <string-array name="coins_list">
+        <item>(COP) peso colombiano</item>
+        <item>(USD) dólar estadounidense</item>
+        <item>(EUR) euro</item>
+        <item>(JPY) yen japonés</item>
+    </string-array>
 </resources>
