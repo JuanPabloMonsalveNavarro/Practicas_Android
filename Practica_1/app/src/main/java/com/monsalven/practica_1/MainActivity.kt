@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-    }
+    }//hola
 
     //Función que guarda y crea un nuvevo usuario con sus atributos
     private fun saveUser(name: String, email: String, password: String, genre: String, hobbies: String, birthday: String, city: String) {
