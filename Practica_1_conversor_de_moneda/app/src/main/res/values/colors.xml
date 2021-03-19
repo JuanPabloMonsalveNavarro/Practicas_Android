@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-    <color name="white">#f6f6f6</color>
+    <color name="white">#f0fff3</color>
 
     //Colores principales modo claro
     <color name="green1">#009378</color>

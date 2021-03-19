@@ -28,8 +28,8 @@ class MainActivity : AppCompatActivity() {
         mainBinding.unitSpinner2.adapter = MoodArrayAdapter(
                 this,
                 listOf(
-                        Mood(R.mipmap.colombia_flag, getString(R.string.peso_colombiano)),
                         Mood(R.mipmap.usa_flag, getString(R.string.dolar_estadounidense)),
+                        Mood(R.mipmap.colombia_flag, getString(R.string.peso_colombiano)),
                         Mood(R.mipmap.europ_flag, getString(R.string.euro)),
                         Mood(R.mipmap.japan_flag, getString(R.string.yen_japones))
                 )

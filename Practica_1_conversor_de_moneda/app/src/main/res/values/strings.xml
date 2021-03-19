@@ -11,4 +11,7 @@
     <string name="yen_japones">(JPY) yen japonés</string>
     <string name="moodImage" />
     <string name="coin_text" />
+    <string name="type_coin">Escoger conversión:</string>
+    <string name="result">Conversión:</string>
+    <string name="print_info" />
 </resources>

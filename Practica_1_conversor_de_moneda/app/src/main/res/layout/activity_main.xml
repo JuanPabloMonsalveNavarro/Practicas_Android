@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
 
@@ -49,16 +50,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border_radius_layout1"
+                android:gravity="end"
                 android:hint="@string/value"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:textSize="30sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:id="@+id/type_coin_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/type_coin"
+            android:textColor="@color/blue1"
+            android:textSize="18sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
             <Spinner
@@ -77,6 +87,7 @@
                 android:id="@+id/invert_image"
                 android:layout_width="1dp"
                 android:layout_height="50dp"
+                android:layout_gravity="center"
                 android:layout_weight="2"
                 android:contentDescription="@string/invert_image"
                 app:srcCompat="@mipmap/invertir_foreground" />
@@ -94,5 +105,22 @@
                 android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/result_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:text="@string/result"
+            android:textColor="@color/blue1"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/print_result_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="94dp"
+            android:background="@drawable/border_radius_layout1"
+            android:text="@string/print_info" />
     </LinearLayout>
 </ScrollView>
