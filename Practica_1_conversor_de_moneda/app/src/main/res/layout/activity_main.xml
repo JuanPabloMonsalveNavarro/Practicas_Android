@@ -106,6 +106,15 @@
 
         </LinearLayout>
 
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="@string/save"
+            android:textSize="18sp" />
+
         <TextView
             android:id="@+id/result_text_view"
             android:layout_width="wrap_content"

@@ -14,4 +14,6 @@
     <string name="type_coin">Escoger conversión:</string>
     <string name="result">Conversión:</string>
     <string name="print_info" />
+    <string name="save">Realizar Conversión</string>
+    <string name="value_error">*Debe dijitar una cifra</string>
 </resources>
