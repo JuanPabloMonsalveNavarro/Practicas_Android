@@ -3,8 +3,6 @@ package com.monsalven.practica_1
 import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.autofill.AutofillValue
 import android.widget.Toast
 import com.monsalven.practica_1.databinding.ActivityMainBinding
 import java.text.SimpleDateFormat

@@ -5,10 +5,10 @@
     <string name="input_title">Ingrese el valor:</string>
     <string name="value">$</string>
     <string name="invert_image">invert_image</string>
-    <string-array name="coins_list">
-        <item>(COP) peso colombiano</item>
-        <item>(USD) dólar estadounidense</item>
-        <item>(EUR) euro</item>
-        <item>(JPY) yen japonés</item>
-    </string-array>
+    <string name="peso_colombiano">(COP) peso colombiano</string>
+    <string name="dolar_estadounidense">(USD) dolar estadounidense</string>
+    <string name="euro">(EUR) euro</string>
+    <string name="yen_japones">(JPY) yen japonés</string>
+    <string name="moodImage" />
+    <string name="coin_text" />
 </resources>
