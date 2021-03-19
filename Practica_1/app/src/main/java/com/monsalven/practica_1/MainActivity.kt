@@ -105,7 +105,11 @@ class MainActivity : AppCompatActivity() {
     private fun printUserData() {
         var info = ""
         for(user in users) {
-            info  = info + "Nombre completo: " + user.name + "\nCorreo electrónico: " + user.email + "\nGénero: " + user.genre + "\nPasatiempos: " + user.hobbies + "\nFecha nacimiento: " + user.birthday + "\nCiudad nacimiento:" + user.city + "\n\n"
+            info  = info + "Nombre completo: " + user.name +
+                    "\nCorreo electrónico: " + user.email +
+                    "\nGénero: " + user.genre + "\nPasatiempos: " + user.hobbies +
+                    "\nFecha nacimiento: " + user.birthday +
+                    "\nCiudad nacimiento:" + user.city + "\n\n"
         }
         mainBinding.printTextView.text = info
     }

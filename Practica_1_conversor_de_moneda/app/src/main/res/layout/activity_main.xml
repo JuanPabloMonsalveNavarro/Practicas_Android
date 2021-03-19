@@ -43,7 +43,9 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/value_text_input_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:errorEnabled="true"
+            app:helperTextEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/value_edit_text"
@@ -128,8 +130,9 @@
         <TextView
             android:id="@+id/print_result_text_view"
             android:layout_width="match_parent"
-            android:layout_height="94dp"
+            android:layout_height="match_parent"
             android:background="@drawable/border_radius_layout1"
-            android:text="@string/print_info" />
+            android:text="@string/print_info"
+            android:textSize="24sp" />
     </LinearLayout>
 </ScrollView>
