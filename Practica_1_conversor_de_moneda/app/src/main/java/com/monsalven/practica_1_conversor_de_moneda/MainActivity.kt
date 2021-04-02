@@ -40,89 +40,91 @@ class MainActivity : AppCompatActivity() {
             val initialCoin = (mainBinding.unitSpinner1.findViewById(R.id.moodText) as TextView).text.toString()
             val endCoin     = (mainBinding.unitSpinner2.findViewById(R.id.moodText) as TextView).text.toString()
             var change      = 0.0
+            var value = 0.0
 
             if(!entry.isEmpty()){
-                val value: Double? = entry.toDouble()
+                value = entry.toDouble()
 
                 when (initialCoin) {
                     getString(R.string.peso_colombiano) -> {
-                        if (endCoin == getString(R.string.dolar_estadounidense)) if (value != null) {
-                            change = value * 0.00028
-                        }
-                        else {
-                            if (endCoin == getString(R.string.euro)) if (value != null) {
-                                change = value * 0.00024
+                        when(endCoin){
+                            getString(R.string.dolar_estadounidense) -> {
+                                change = value * 0.00027
                             }
-                            else {
-                                if (endCoin == getString(R.string.yen_japones)) if (value != null) {
-                                    change = value * 0.031
-                                }
-                                else {
-                                    if (value != null) {
-                                        change = value
-                                    }
-                                }
+
+                            getString(R.string.euro) ->{
+                                change = value * 0.00023
                             }
+
+                            getString(R.string.yen_japones) ->{
+                                change = value * 0.030
+                            }
+
+                            getString(R.string.peso_colombiano) ->{
+                                change = value * 1
+                            }
+
                         }
                     }
                     getString(R.string.dolar_estadounidense) -> {
-                        if (endCoin == getString(R.string.peso_colombiano)) if (value != null) {
-                            change = value * 3557.17
-                        }
-                        else {
-                            if (endCoin == getString(R.string.euro)) if (value != null) {
-                                change = value * 0.84
+                        when(endCoin) {
+                            getString(R.string.euro) -> {
+                                change = value * 0.85
                             }
-                            else {
-                                if (endCoin == getString(R.string.yen_japones)) if (value != null) {
-                                    change = value * 108.90
-                                }
-                                else {
-                                    if (value != null) {
-                                        change = value
-                                    }
-                                }
+
+                            getString(R.string.yen_japones) -> {
+                                change = value * 110.71
                             }
+
+                            getString(R.string.peso_colombiano) -> {
+                                change = value * 3661.70
+                            }
+
+                            getString(R.string.dolar_estadounidense) -> {
+                                change = value * 1
+                            }
+
                         }
                     }
                     getString(R.string.euro) -> {
-                        if (endCoin == getString(R.string.peso_colombiano)) if (value != null) {
-                            change = value * 4236.91
-                        }
-                        else {
-                            if (endCoin == getString(R.string.dolar_estadounidense)) if (value != null) {
-                                change = value * 1.19
+                        when(endCoin){
+                            getString(R.string.dolar_estadounidense) -> {
+                                change = value * 1.18
                             }
-                            else {
-                                if (endCoin == getString(R.string.yen_japones)) if (value != null) {
-                                    change = value * 129.68
-                                }
-                                else {
-                                    if (value != null) {
-                                        change = value
-                                    }
-                                }
+
+                            getString(R.string.euro) ->{
+                                change = value * 1
                             }
+
+                            getString(R.string.yen_japones) ->{
+                                change = value * 130.21
+                            }
+
+                            getString(R.string.peso_colombiano) ->{
+                                change = value * 4306.84
+                            }
+
                         }
                     }
-                    else -> {
-                        if (endCoin == getString(R.string.peso_colombiano)) if (value != null) {
-                            change = value * 32.68
-                        }
-                        else {
-                            if (endCoin == getString(R.string.dolar_estadounidense)) if (value != null) {
-                                change = value * 0.0092
+
+                    getString(R.string.yen_japones) -> {
+                        when(endCoin){
+                            getString(R.string.dolar_estadounidense) -> {
+                                change = value * 0.0090
                             }
-                            else {
-                                if (endCoin == getString(R.string.euro)) if (value != null) {
-                                    change = value * 0.0077
-                                }
-                                else {
-                                    if (value != null) {
-                                        change = value
-                                    }
-                                }
+
+                            getString(R.string.euro) ->{
+                                change = value * 0.0077
                             }
+
+                            getString(R.string.yen_japones) ->{
+                                change = value * 1
+                            }
+
+                            getString(R.string.peso_colombiano) ->{
+                                change = value * 33.08
+                            }
+
                         }
                     }
                 }

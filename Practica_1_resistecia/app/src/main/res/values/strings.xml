@@ -1,12 +1,10 @@
 <resources>
     <string name="app_name">Calculadora Ohmnica</string>
-    <string-array name="colors">
-        <item>Verde</item>
-        <item>Rojo</item>
-        <item>Amarillo</item>
-        <item>Purpura</item>
-        <item>Azul</item>
-        <item>Cafe</item>
-        <item>Negro</item>
-    </string-array>
+    <string name="verde_string">Verde</string>
+    <string name="rojo_string">Rojo</string>
+    <string name="amarillo_string">Amarillo</string>
+    <string name="morado_string">Purpura</string>
+    <string name="azul_string">Azul</string>
+    <string name="cafe_string">Cafe</string>
+    <string name="negro_string">Negro</string>
 </resources>
