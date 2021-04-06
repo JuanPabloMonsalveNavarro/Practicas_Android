@@ -6,5 +6,11 @@
     <string name="morado_string">Purpura</string>
     <string name="azul_string">Azul</string>
     <string name="cafe_string">Cafe</string>
+    <string name="blanco_string">Blanco</string>
+    <string name="gris_string">Gris</string>
+    <string name="naranja_string">Naranja</string>
+    <string name="calcular_string">Calcular resistencia</string>
+    <string name="resultado_string">El valor es de:</string>
+    <string name="resistencia_descripcion">Imagen de una resistencia</string>
     <string name="negro_string">Negro</string>
 </resources>
