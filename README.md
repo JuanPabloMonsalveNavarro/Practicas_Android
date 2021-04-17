@@ -27,6 +27,7 @@ a. Splash (SplashActivity.kt): con logotipo de su aplicación, se cargará máxi
 b. Login (LoginActivity.kt): El login será con correo electrónico, una contraseña de mínimo 6 dígitos y una opción de ir a la actividad de registro
 c. Actividad de Registro (RegistroActivity.kt): Se utiliza la actividad de registro de la práctica 1 con las validaciones necesarias y los campos que usted considere necesitará en su proyecto
 d. Actividad Principal (MainActivity.kt): En esta actividad se visualiza un textview con el correo electrónico de registro, un menú de overflow con la opción "Cerrar Sesión"
+
 2. Tener en cuenta los siguientes aspectos para definir la navegación:
 - Al abrir la aplicación se abre el Splash por máximo 2 segundos, al cerrarse se abre el Login
 - En Login inicialmente no hay datos cargados por lo que es necesario que el usuario vaya a Registro (Click en Registro)
