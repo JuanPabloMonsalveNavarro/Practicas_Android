@@ -7,7 +7,7 @@
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
         motion:autoTransition="animateToEnd"
-        motion:duration="4000">
+        motion:duration="2000">
        <KeyFrameSet>
            <KeyAttribute
                motion:motionTarget="@+id/logoImageview"
@@ -41,7 +41,7 @@
             motion:layout_constraintHorizontal_bias="0.497"
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="wrap_content"
-            android:id="@+id/titleTextView"
+            android:id="@+id/main_tittle_login"
             android:alpha="0.0" />
     </ConstraintSet>
 
@@ -56,7 +56,7 @@
             motion:layout_constraintStart_toStartOf="parent"
             android:layout_marginBottom="16dp" />
         <Constraint
-            android:id="@+id/titleTextView"
+            android:id="@+id/main_tittle_login"
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

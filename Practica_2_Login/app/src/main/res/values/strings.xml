@@ -1,5 +1,13 @@
 <resources>
-    <string name="app_name">Practica_2_Login</string>
+    <string name="app_name">Practica 2 Juan Pablo Monsalve</string>
+    <string name="login_tittle">My  Account</string>
     <string name="applicationName">Nombre de la APP</string>
     <string name="madeBy">Made by / Juan Pablo Monsalve Navarro</string>
+    <string name="userName">User name</string>
+    <string name="password">Password</string>
+    <string name="bttn_login">Sign In</string>
+    <string name="bttn_register">REGISTER</string>
+    <string name="logo_imageView">imagen del logo</string>
+    <string name="register_textview">Are you new here?</string>
+    <string name="text_button">REGISTER</string>
 </resources>
