@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Practica_2_Login</string>
+    <string name="applicationName">Nombre de la APP</string>
+    <string name="madeBy">Made by / Juan Pablo Monsalve Navarro</string>
 </resources>
