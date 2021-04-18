@@ -15,7 +15,7 @@
         android:id="@+id/main_register_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:drawablePadding="5dp"
         android:text="@string/register_tittle"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
@@ -31,7 +31,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/login_cardView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
         app:cardUseCompatPadding="true">
@@ -128,7 +128,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
-                android:id="@+id/city_linear_layout"
+                android:id="@+id/vinculation_linear_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
@@ -138,14 +138,17 @@
                     android:layout_width="183dp"
                     android:layout_height="match_parent"
                     android:text="@string/vinculo"
-                    android:textSize="17dp" />
+                    android:textSize="17sp"
+                    android:drawableStart="@drawable/education"
+                    android:drawablePadding="7dp"/>
 
                 <Spinner
                     android:id="@+id/birth_spinner"
                     android:layout_width="130dp"
                     android:layout_height="match_parent"
                     android:entries="@array/vinculation_list"
-                    android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
+                    android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
+                    />
 
             </LinearLayout>
 
@@ -163,7 +166,8 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
                 android:text="@string/bttn_register"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                />
 
         </LinearLayout>
 
