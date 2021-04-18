@@ -115,7 +115,8 @@
             android:layout_weight="2"
             android:gravity="center"
             android:text="@string/register_textview"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/bttn_register"
