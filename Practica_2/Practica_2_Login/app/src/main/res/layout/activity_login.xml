@@ -54,7 +54,7 @@
                 android:id="@+id/userName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/userName"
+                android:hint="@string/email"
                 app:counterEnabled="true"
                 app:counterMaxLength="30"
                 app:errorEnabled="true">

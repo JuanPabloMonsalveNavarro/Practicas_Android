@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:alpha="0.0"
         android:text="@string/applicationName"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
