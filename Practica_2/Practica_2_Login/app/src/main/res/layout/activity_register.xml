@@ -85,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/cel"
                 app:counterEnabled="true"
-                app:counterMaxLength="30"
+                app:counterMaxLength="11"
                 app:errorEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -143,7 +143,7 @@
                     android:drawablePadding="7dp"/>
 
                 <Spinner
-                    android:id="@+id/birth_spinner"
+                    android:id="@+id/vinculation_spinner"
                     android:layout_width="130dp"
                     android:layout_height="match_parent"
                     android:entries="@array/vinculation_list"

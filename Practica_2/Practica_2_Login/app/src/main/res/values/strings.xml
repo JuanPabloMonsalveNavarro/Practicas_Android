@@ -18,6 +18,11 @@
     <string name="register_textview">Eres nuevo aquí?</string>
     <string name="todo">TODO</string>
     <string name="textview">TextView</string>
+    <string name="name_required">El nombre debe contener mínimo 6 letras</string>
+    <string name="password_required">La contraseña debe contener mínimo 6 carácteres</string>
+    <string name="email_required">Se requiere un correo electrónico válido</string>
+    <string name="phone_required">Se requiere un télefono válido sin espacios</string>
+    <string name="password_error">*La contraseña no coincide</string>
 
     <string-array name="vinculation_list">
         <item>Estudiante</item>
