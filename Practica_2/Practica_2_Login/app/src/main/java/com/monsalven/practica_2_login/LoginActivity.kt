@@ -38,9 +38,6 @@ class LoginActivity : AppCompatActivity() {
         var email = objectIntent.getStringExtra("email")
         var password = objectIntent.getStringExtra("password")
 
-        println(email)
-        println(password)
-
         loginBinding.userNameEditText.setText(email)
         loginBinding.passwordEditText.setText(password)
 

@@ -48,7 +48,7 @@ class RegisterActivity : AppCompatActivity() {
             val repPassword = registerBinding.repPasswordEditText.text.toString()
             val vinculation = registerBinding.vinculationSpinner.selectedItem.toString()
 
-            /*Verificación de la coincidencia entre contraseñas*/
+            /*Verificación de la coincidencia entre contraseñas y campos vacíos*/
             if(name.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty() || repPassword.isEmpty()) {
                 Toast.makeText(this, getString(R.string.empty_field), Toast.LENGTH_SHORT).show()
             }
@@ -60,6 +60,7 @@ class RegisterActivity : AppCompatActivity() {
                     registerBinding.repPassword.error  = null
                     /*Capturar email y contraseña para ser enviádos al login*/
                     startActivity(Intent(this@RegisterActivity, LoginActivity::class.java).putExtra("email", email).putExtra("password", password))
+
                 }
             }
         }
