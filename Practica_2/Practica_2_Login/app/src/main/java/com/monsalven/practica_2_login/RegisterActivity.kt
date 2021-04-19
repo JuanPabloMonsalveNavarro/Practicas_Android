@@ -1,11 +1,13 @@
 package com.monsalven.practica_2_login
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.animation.AnimationUtils
 import android.widget.TextView
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import com.monsalven.practica_2_login.databinding.ActivityRegisterBinding
 import com.monsalven.practica_2_login.extension.isValidEmail
@@ -22,11 +24,10 @@ class RegisterActivity : AppCompatActivity() {
         registerBinding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(registerBinding.root)
 
-        /*Verificaciones*/
+        /*Verificaciones en loscampos del formulario*/
         registerBinding.userNameEditText.validate(getString(R.string.name_required)) { s -> s.length >= 6 }
         registerBinding.emailEditText.validate(getString(R.string.email_required)) {s -> s.isValidEmail()}
         registerBinding.phoneEditText.validate(getString(R.string.phone_required)) {s -> s.isValidPhone()}
-
         registerBinding.passwordEditText.addTextChangedListener(textWatcher)
 
         /*Declaración y Activasión de animaciones*/
@@ -38,27 +39,38 @@ class RegisterActivity : AppCompatActivity() {
         val loginCardView = findViewById<CardView>(R.id.login_cardView)
         loginCardView.startAnimation(btt)
 
+        /*Acciones a realizar cuando se presione el boton de registro*/
         registerBinding.bttnRegister.setOnClickListener {
             val name        = registerBinding.userNameEditText.text.toString()
             val email       = registerBinding.emailEditText.text.toString()
+            val phone       = registerBinding.phoneEditText.text.toString()
             val password    = registerBinding.passwordEditText.text.toString()
             val repPassword = registerBinding.repPasswordEditText.text.toString()
-            val vinculation        = registerBinding.vinculationSpinner.selectedItem.toString()
+            val vinculation = registerBinding.vinculationSpinner.selectedItem.toString()
 
-            if(password != repPassword){
-                registerBinding.repPassword.error = getString(R.string.password_error)
+            /*Verificación de la coincidencia entre contraseñas*/
+            if(name.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty() || repPassword.isEmpty()) {
+                Toast.makeText(this, getString(R.string.empty_field), Toast.LENGTH_SHORT).show()
             }
             else{
-                registerBinding.repPassword.error  = null
+                if(password != repPassword){
+                    registerBinding.repPassword.error = getString(R.string.password_error)
+                }
+                else{
+                    registerBinding.repPassword.error  = null
+                    /*Capturar email y contraseña para ser enviádos al login*/
+                    startActivity(Intent(this@RegisterActivity, LoginActivity::class.java).putExtra("email", email).putExtra("password", password))
+                }
             }
         }
     }
 
+    /*Definición del textWatcher para verificar que la contraseña tenga el número necesario de carácteres*/
     private val textWatcher = object : TextWatcher {
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         override fun afterTextChanged(s: Editable?) {
-            if(s.toString().length <= 6) {
+            if(s.toString().length < 6) {
                 registerBinding.password.error = getString(R.string.password_required)
             }
             else{

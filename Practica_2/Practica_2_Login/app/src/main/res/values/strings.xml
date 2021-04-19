@@ -23,6 +23,7 @@
     <string name="email_required">Se requiere un correo electrónico válido</string>
     <string name="phone_required">Se requiere un télefono válido sin espacios</string>
     <string name="password_error">*La contraseña no coincide</string>
+    <string name="empty_field">Existen campos sin rellenar</string>
 
     <string-array name="vinculation_list">
         <item>Estudiante</item>
