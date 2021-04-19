@@ -1,3 +1,8 @@
 
-ykotlin:S117"VRename this local variable to match the regular expression "^`?[_a-z][a-zA-Z0-9]*`?$".(ÃšÖ™úÿÿÿÿ8ÛÁ¢¶/
-tkotlin:S117"VRename this local variable to match the regular expression "^`?[_a-z][a-zA-Z0-9]*`?$".(Úûé8Šê­¶/
+Hkotlin:S1481*")Remove this unused "name" local variable.(óô€¿8Œ¼·Á/
+tkotlin:S117&"VRename this local variable to match the regular expression "^`?[_a-z][a-zA-Z0-9]*`?$".(Úûé8Šê­¶/
+Mkotlin:S1481.")Remove this unused "city" local variable.(¹Ééªûÿÿÿÿ8ù¿»Á/
+ykotlin:S117$"VRename this local variable to match the regular expression "^`?[_a-z][a-zA-Z0-9]*`?$".(ÃšÖ™úÿÿÿÿ8ÛÁ¢¶/
+ykotlin:S1186:"ZAdd a nested comment explaining why this function is empty or complete the implementation.(İéòæ8°»ô¿/
+Nkotlin:S1481+"*Remove this unused "email" local variable.(ŞÂİÊüÿÿÿÿ8Œ¼·Á/
+ykotlin:S1186<"ZAdd a nested comment explaining why this function is empty or complete the implementation.(©£ğ¯8¬üÀ/

@@ -1,13 +1,11 @@
 package com.monsalven.practica_2_login
 
-import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 import java.util.*
-import kotlin.concurrent.timerTask
 
 
 class SplashActivity : AppCompatActivity() {
@@ -26,6 +24,7 @@ class SplashActivity : AppCompatActivity() {
 
             override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) {
                 startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+                finish()
             }
         })
     }

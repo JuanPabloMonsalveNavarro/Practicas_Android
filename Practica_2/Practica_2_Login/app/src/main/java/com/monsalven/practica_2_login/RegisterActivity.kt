@@ -30,20 +30,20 @@ class RegisterActivity : AppCompatActivity() {
         registerBinding.passwordEditText.addTextChangedListener(textWatcher)
 
         /*Declaración y Activasión de animaciones*/
-        val ttb = AnimationUtils.loadAnimation(this, R.anim.ttb);
-        val btt = AnimationUtils.loadAnimation(this, R.anim.btt);
+        val ttb = AnimationUtils.loadAnimation(this, R.anim.ttb)
+        val btt = AnimationUtils.loadAnimation(this, R.anim.btt)
 
-        val main_register_login = findViewById(R.id.main_register_login) as TextView
-        main_register_login.startAnimation(ttb)
-        val login_cardView = findViewById(R.id.login_cardView) as CardView
-        login_cardView.startAnimation(btt)
+        val mainRegisterLogin = findViewById<TextView>(R.id.main_register_login)
+        mainRegisterLogin.startAnimation(ttb)
+        val loginCardView = findViewById<CardView>(R.id.login_cardView)
+        loginCardView.startAnimation(btt)
 
         registerBinding.bttnRegister.setOnClickListener {
             val name        = registerBinding.userNameEditText.text.toString()
             val email       = registerBinding.emailEditText.text.toString()
             val password    = registerBinding.passwordEditText.text.toString()
             val repPassword = registerBinding.repPasswordEditText.text.toString()
-            val city        = registerBinding.vinculationSpinner.selectedItem.toString()
+            val vinculation        = registerBinding.vinculationSpinner.selectedItem.toString()
 
             if(password != repPassword){
                 registerBinding.repPassword.error = getString(R.string.password_error)
@@ -56,9 +56,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private val textWatcher = object : TextWatcher {
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-
         override fun afterTextChanged(s: Editable?) {
             if(s.toString().length <= 6) {
                 registerBinding.password.error = getString(R.string.password_required)
