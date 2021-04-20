@@ -2,8 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:id="@+id/menu_0"
+        android:icon="@drawable/vertical_lines"
+        android:title="Menu 0"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/action_logout"
+                android:title="@string/action_logout"
+                android:icon="@drawable/off_icon"
+                app:showAsAction="never" />
+        </menu>
+    </item>
 </menu>
+
