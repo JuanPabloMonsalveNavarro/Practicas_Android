@@ -19,3 +19,7 @@ Fapp/src/main/java/com/monsalven/practica_2_login/extension/validate.kt,6\8\681
 Kapp/src/main/java/com/monsalven/practica_2_login/extension/validateEmail.kt,3\3\3343eea4e0c9ff91d4c938ee648c6d426f318ae2
 ~
 Napp/src/main/java/com/monsalven/practica_2_login/extension/afterTextCahnged.kt,a\b\ab16f8bdd1b19b9cf68c6f59a8b6e6e137085929
+z
+Japp/src/main/java/com/monsalven/practica_2_login/extension/compareUsers.kt,4\1\41938c86d92c8d8ab118622572136401e09fd7f1
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35

@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
 
 
-
     //val header_view = navigationView.findViewById<TextView>(R.id.textView)
 
     override fun onCreate(savedInstanceState: Bundle?) {
