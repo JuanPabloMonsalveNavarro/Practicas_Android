@@ -13,7 +13,8 @@ import com.monsalven.practica_2_login.databinding.ActivityRegisterBinding
 import com.monsalven.practica_2_login.extension.isValidEmail
 import com.monsalven.practica_2_login.extension.isValidPhone
 import com.monsalven.practica_2_login.extension.validate
-
+import com.monsalven.practica_2_login.User
+var usuario_registrado = User(); //usuario global
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -58,8 +59,10 @@ class RegisterActivity : AppCompatActivity() {
                 }
                 else{
                     registerBinding.repPassword.error  = null
-                    /*Capturar email y contraseña para ser enviádos al login*/
-                    startActivity(Intent(this@RegisterActivity, LoginActivity::class.java).putExtra("email", email).putExtra("password", password))
+                    /*Capturar usuario y guardarlo en el objeto usuario*/
+                    //startActivity(Intent(this@RegisterActivity, LoginActivity::class.java).putExtra("email", email).putExtra("password", password))
+                    save_user(name, email, phone, password, vinculation);
+                    startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
 
                 }
             }
@@ -79,4 +82,12 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
     }
+}
+
+private fun save_user(name: String, email: String, phone: String, password: String,  vinculation: String){
+    usuario_registrado .name=name;
+    usuario_registrado .email=email;
+    usuario_registrado.phone = phone;
+    usuario_registrado .password = password;
+    usuario_registrado .vinculation = vinculation;
 }

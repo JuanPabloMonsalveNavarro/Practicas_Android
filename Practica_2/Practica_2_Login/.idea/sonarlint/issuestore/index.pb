@@ -11,8 +11,6 @@ P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 r
 Bapp/src/main/java/com/monsalven/practica_2_login/SplashActivity.kt,6\6\6652b7b71ccd96734f48410a01066f14142bcb8b
-h
-8app/src/main/java/com/monsalven/practica_2_login/User.kt,5\b\5b2c21e0b08fed0ef8611b1bffcc8ec7b6f44978
 {
 Kapp/src/main/java/com/monsalven/practica_2_login/extension/validatePhone.kt,6\f\6fbee1b7305cc7308f0fb547cdda8acca00ca1b8
 v
