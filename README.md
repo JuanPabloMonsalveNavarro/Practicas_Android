@@ -38,3 +38,19 @@ d. Actividad Principal (MainActivity.kt): En esta actividad se visualiza un text
 - Al Cerrar sesión el usuario debe poder loguearse con los datos entrados inicialmente
 - Verifique que el funcionamiento del onBackPressed sea el adecuado
 - No se puede utilizar SQLite, ROOM, ni Preferencias Compartidas
+
+## Práctica 3
+### Fragments y Material Design (App Final V2.0)
+Desarrollar la versión 2.0 de su aplicación, para esto tener en cuenta las siguientes
+instrucciones:
+- (1.5) La versión 1.0 de su app debe funcionar en su totalidad, (adicional: una vez
+el usuario esté logueado (MainActivity) si se presiona el boton BackPressed se
+debe cerrar la aplicacion)
+- (3.5) Implementar una versión inicial de la aplicación de su proyecto final
+utilizando los componente de Material Design para navegación, definir cuál
+estructura utilizará (Bottom Navigation, Navigation Drawer ó Swipe Tabs)
+Crear los fragments necesarios según su aplicación y colocar imagen o un
+textview informando la función de ese fragment.
+Observaciones
+- Se calificará 80% funcionalidad y 20% Diseño
+- Enviar el .apk de la aplicación
