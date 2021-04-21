@@ -1,5 +1,6 @@
 # Practicas_Android
 ## Propiedad de Juan Pablo Monsalve Navarro
+## Asistente tecnico Omar David Vargas Bonett
 ### Repositorio creado para almacenar los proyectos de programación de aplicaciones móviles en Android
 
 ## Práctica # 1
