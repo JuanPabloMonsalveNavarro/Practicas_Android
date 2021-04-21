@@ -39,7 +39,7 @@ d. Actividad Principal (MainActivity.kt): En esta actividad se visualiza un text
 - Verifique que el funcionamiento del onBackPressed sea el adecuado
 - No se puede utilizar SQLite, ROOM, ni Preferencias Compartidas
 
-## Práctica 3
+## Práctica # 3
 ### Fragments y Material Design (App Final V2.0)
 Desarrollar la versión 2.0 de su aplicación, para esto tener en cuenta las siguientes
 instrucciones:
