@@ -25,6 +25,7 @@
     <string name="password_error">*La contraseña no coincide</string>
     <string name="empty_field">Existen campos vacíos</string>
     <string name="wrong_password">El email o la contraseña no coiciden</string>
+    <string name="back_pressed">Por favor presione nuevamente para salir</string>
     <string name="wiii">:D</string>
 
     <string-array name="vinculation_list">
