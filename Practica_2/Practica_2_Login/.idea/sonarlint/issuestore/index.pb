@@ -23,3 +23,7 @@ z
 Japp/src/main/java/com/monsalven/practica_2_login/extension/compareUsers.kt,4\1\41938c86d92c8d8ab118622572136401e09fd7f1
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+y
+Iapp/src/main/java/com/monsalven/practica_2_login/ui/home/HomeViewModel.kt,5\b\5bc046442f42b8dd2198aee88f11b0c85dee643d
+x
+Happ/src/main/java/com/monsalven/practica_2_login/ui/home/HomeFragment.kt,3\c\3c7e93ba3322ce11b81ea9867e02b56493d17b35

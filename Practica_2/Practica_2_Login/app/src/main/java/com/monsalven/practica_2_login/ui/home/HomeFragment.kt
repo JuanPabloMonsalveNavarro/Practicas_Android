@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.monsalven.practica_2_login.R
+import com.monsalven.practica_2_login.databinding.ActivityLoginBinding
+import com.monsalven.practica_2_login.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 

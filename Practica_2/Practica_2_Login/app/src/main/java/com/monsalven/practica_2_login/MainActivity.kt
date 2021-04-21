@@ -50,16 +50,12 @@ class MainActivity : AppCompatActivity() {
 
 
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
-        val header_view = navigationView.getHeaderView(0)
+        val headerView = navigationView.getHeaderView(0)
 
-        val navUsername = header_view.findViewById<TextView>(R.id.textViewUserName) as TextView
+        val navUsername = headerView.findViewById<TextView>(R.id.textViewUserName) as TextView
         navUsername.text = usuario_registrado.name
-        val navUseremail = header_view.findViewById<TextView>(R.id.textViewUserEmail) as TextView
-        navUseremail.text = usuario_registrado.email
-
-        val log_out_button = findViewById<Button>(R.id.action_logout)
-
-
+        val navUserEmail = headerView.findViewById<TextView>(R.id.textViewUserEmail) as TextView
+        navUserEmail.text = usuario_registrado.email
 
     }
 
@@ -75,12 +71,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId){
+        return when (item.itemId){
             R.id.action_logout->{
                 startActivity(Intent(this@MainActivity, LoginActivity::class.java))
-                return true
+                true
             }
-            else -> return super.onOptionsItemSelected(item)
+            else -> super.onOptionsItemSelected(item)
         }
 
     }
