@@ -5,6 +5,8 @@
         <item name="colorPrimary">@color/green_udea</item>
         <item name="colorPrimaryVariant">@color/green_17</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="android:textColorPrimary">@color/green_udea</item>
+
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/blue_8</item>
         <item name="colorSecondaryVariant">@color/blue_2</item>
@@ -28,7 +30,7 @@
         <item name="android:windowBackground">@drawable/bg_splashscreen</item>
     </style>
 
-    <style name="LoginTheme" parent="Theme.AppCompat.DayNight.NoActionBar"></style>
+    <style name="LoginTheme" parent="Theme.AppCompat.DayNight.NoActionBar"/>
 
     <style name="Theme.Practica_2_Login.NoActionBar">
         <item name="windowActionBar">false</item>

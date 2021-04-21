@@ -106,6 +106,7 @@
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:inputType="textPassword"
                     android:id="@+id/password_editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -121,6 +122,7 @@
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:inputType="textPassword"
                     android:id="@+id/rep_password_editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -144,11 +146,10 @@
 
                 <Spinner
                     android:id="@+id/vinculation_spinner"
-                    android:layout_width="130dp"
+                    android:layout_width="170dp"
                     android:layout_height="match_parent"
                     android:entries="@array/vinculation_list"
-                    android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
-                    />
+                    android:theme="@android:style/Theme.DeviceDefault.DayNight" />
 
             </LinearLayout>
 
