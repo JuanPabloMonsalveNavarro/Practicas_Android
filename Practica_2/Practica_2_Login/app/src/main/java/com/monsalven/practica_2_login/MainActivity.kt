@@ -1,9 +1,11 @@
 package com.monsalven.practica_2_login
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -55,6 +57,10 @@ class MainActivity : AppCompatActivity() {
         val navUseremail = header_view.findViewById<TextView>(R.id.textViewUserEmail) as TextView
         navUseremail.text = usuario_registrado.email
 
+        val log_out_button = findViewById<Button>(R.id.action_logout)
+
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -69,6 +75,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return super.onOptionsItemSelected(item)
+        when (item.itemId){
+            R.id.action_logout->{
+                startActivity(Intent(this@MainActivity, LoginActivity::class.java))
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
+
     }
 }

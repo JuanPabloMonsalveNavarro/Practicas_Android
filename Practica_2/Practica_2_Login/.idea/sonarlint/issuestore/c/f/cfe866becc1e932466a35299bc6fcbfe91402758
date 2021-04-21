@@ -1,3 +1,5 @@
 
-tkotlin:S1172"VRename this local variable to match the regular expression "^`?[_a-z][a-zA-Z0-9]*`?$".(ìÚªÏ8ó¡ÅòŽ/
-Bkotlin:S125"Remove this commented out code.(Ì˜‡®øÿÿÿÿ8ë®™ñŽ/
+Bkotlin:S125"Remove this commented out code.(Ì˜‡®øÿÿÿÿ8ë®™ñŽ/
+Wkotlin:S1481<"3Remove this unused "log_out_button" local variable.(¶ñøÿÿÿÿ8ŠÜËŒ/
+ykotlin:S117<"VRename this local variable to match the regular expression "^`?[_a-z][a-zA-Z0-9]*`?$".(¶ñøÿÿÿÿ8æ»¹Œ/
+tkotlin:S1175"VRename this local variable to match the regular expression "^`?[_a-z][a-zA-Z0-9]*`?$".(ìÚªÏ8ó¡ÅòŽ/
