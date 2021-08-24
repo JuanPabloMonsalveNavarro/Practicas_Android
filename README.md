@@ -56,7 +56,9 @@ Observaciones
 - Enviar el .apk de la aplicación
 
 ## Práctica # 5
+
 ### (40%) Diseño base de datos:
+
 -Realizar el diseño de la base de datos de su aplicación, tener en cuenta el ejemplo dado en clase. 
 -La aplicación debe tener mínimo 3 tablas: Una para usuarios y dos según necesidad de su aplicación, si implementan más no hay problema
 -Subir a classroom un pdf sencillo con el formato que ustedes deseen donde se especifiquen las tablas, el nombre de cada una, sus atributos y que tipo de dato almacenará.
@@ -64,6 +66,7 @@ Observaciones
 -Se sugiere antes de la fecha de entrega solicitar asesoría al profesor para no tener que hacer correcciones ni reprocesos que los hagan perder tiempo.
 
 ###(60%) Aplicación Deudor APP
+
 -Crear un Splash, Login y Registro a la aplicación desarrollada en clase de ROOM.
 -El registro debe tener mínimo correo y contraseña y se van a guardar todos los campos digitados en base de datos (incluyendo contraseña) la navegación debe ser igual a la de la práctica 2
 -Los datos de registro se deben almacenar en una base de datos con ROOM
