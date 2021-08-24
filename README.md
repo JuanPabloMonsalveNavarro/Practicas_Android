@@ -65,7 +65,7 @@ Observaciones
 -Describir brevemente cuál es el uso de la tabla
 -Se sugiere antes de la fecha de entrega solicitar asesoría al profesor para no tener que hacer correcciones ni reprocesos que los hagan perder tiempo.
 
-###(60%) Aplicación Deudor APP
+### (60%) Aplicación Deudor APP
 
 -Crear un Splash, Login y Registro a la aplicación desarrollada en clase de ROOM.
 -El registro debe tener mínimo correo y contraseña y se van a guardar todos los campos digitados en base de datos (incluyendo contraseña) la navegación debe ser igual a la de la práctica 2
