@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="purple_1">#F4E8FD</color>
+    <color name="purple_2">#E8D2FA</color>
+    <color name="purple_3">#DDBBF8</color>
+    <color name="purple_4">#D1A4F6</color>
+    <color name="purple_5">#C68DF4</color>
+    <color name="purple_6">#BA77F1</color>
+    <color name="purple_7">#AF60EF</color>
+    <color name="purple_8">#A349ED</color>
+    <color name="purple_9">#9832EB</color>
+    <color name="purple_10">#8C1CE8</color>
+    <color name="purple_11">#8105E6</color>
+    <color name="purple_12">#8906D3</color>
+    <color name="purple_13">#9107BF</color>
+    <color name="purple_14">#9908AC</color>
+    <color name="purple_15">#A10998</color>
+    <color name="red_1">#A90A85</color>
+    <color name="red_2">#B20B71</color>
+    <color name="red_3">#BA0C5E</color>
+    <color name="red_4">#C20D4A</color>
+    <color name="red_5">#CA0E37</color>
+    <color name="blue_2">#4F0AE1</color>
+    <color name="blue_3">#460BDF</color>
+    <color name="blue_4">#3C0CDE</color>
+    <color name="blue_5">#320DDD</color>
+    <color name="blue_6">#280EDC</color>
+    <color name="blue_7">#1E0FDB</color>
+    <color name="blue_8">#1410DA</color>
+
+    <color name="green_udea">#01602D</color>
+    <color name="green_1">#56AB2F</color>
+    <color name="green_2">#5DB034</color>
+    <color name="green_3">#65B538</color>
+    <color name="green_4">#6CB93D</color>
+    <color name="green_5">#74BE42</color>
+    <color name="green_6">#7BC347</color>
+    <color name="green_7">#83C84B</color>
+    <color name="green_8">#8ACD50</color>
+    <color name="green_9">#92D255</color>
+    <color name="green_10">#99D65A</color>
+    <color name="green_11">#A1DB5E</color>
+    <color name="green_12">#A8E063</color>
+
+    <color name="green_13">#52C234</color>
+    <color name="green_14">#4BB22F</color>
+    <color name="green_15">#44A32B</color>
+    <color name="green_16">#3D9326</color>
+    <color name="green_17">#368421</color>
+    <color name="green_18">#2F741C</color>
+    <color name="green_19">#296518</color>
+    <color name="green_20">#225513</color>
+    <color name="green_21">#1B460E</color>
+    <color name="green_22">#143609</color>
+    <color name="green_23">#0D2705</color>
+    <color name="green_24">#061700</color>
+
+
+    <color name="green_25">#52C234</color>
+    <color name="green_26">#5AC03E</color>
+    <color name="green_27">#61BD48</color>
+    <color name="green_28">#69BB53</color>
+    <color name="green_29">#70B95D</color>
+    <color name="green_30">#78B667</color>
+    <color name="green_31">#7FB471</color>
+    <color name="green_32">#87B17B</color>
+    <color name="green_33">#8EAF85</color>
+    <color name="green_34">#96AD90</color>
+    <color name="green_35">#9DAA9A</color>
+    <color name="green_36">#A5A8A4</color>
+
+</resources>
