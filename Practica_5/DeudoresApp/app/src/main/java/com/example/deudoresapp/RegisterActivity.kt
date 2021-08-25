@@ -56,7 +56,7 @@ class RegisterActivity : AppCompatActivity() {
             val phone = registerBinding.phoneEditText.text.toString()
             val password = registerBinding.passwordEditText.text.toString()
             val repPassword = registerBinding.repPasswordEditText.text.toString()
-            val vinculation = registerBinding.vinculationSpinner.selectedItem.toString()
+            //val vinculation = registerBinding.vinculationSpinner.selectedItem.toString()
 
             /*Verificación de la coincidencia entre contraseñas y campos vacíos*/
             if (name.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty() || repPassword.isEmpty()) {
@@ -68,7 +68,7 @@ class RegisterActivity : AppCompatActivity() {
                     registerBinding.repPassword.error = null
                     /*Capturar usuario y guardarlo en el objeto usuario*/
                     //startActivity(Intent(this@RegisterActivity, LoginActivity::class.java).putExtra("email", email).putExtra("password", password))
-                    saveUser(name, email, phone, password, vinculation);
+                    saveUser(name, email, phone, password);
                     startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
 
                 }
@@ -91,7 +91,7 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
     }
-    private fun saveUser(name: String, email: String, phone: String, password: String, vinculation: String) {
+    private fun saveUser(name: String, email: String, phone: String, password: String) {
 
         val user = User(id=NULL, name = name,email = email, phone = phone, password = password)
         val userDAO : UserDao = DeudoresApp.database.UserDao()

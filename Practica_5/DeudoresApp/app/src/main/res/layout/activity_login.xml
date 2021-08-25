@@ -16,7 +16,7 @@
         android:layout_height="130dp"
         android:layout_marginTop="20dp"
         android:contentDescription="@string/logo_imageView"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/inversor" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/main_tittle_login"

@@ -15,8 +15,8 @@
 
     <string name="login_tittle">Mi Cuenta</string>
     <string name="register_tittle">Registro</string>
-    <string name="applicationName">SIGILO</string>
-    <string name="madeBy">Hecho por/ David Bonett y Juan Pablo Monsalve</string>
+    <string name="applicationName">Debtor App</string>
+    <string name="madeBy">Hecho por/ Juan Pablo Monsalve</string>
     <string name="name">Nombre Completo</string>
     <string name="cel">Teléfono</string>
     <string name="required_field">*Campo requerido</string>

@@ -129,30 +129,6 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <LinearLayout
-                android:id="@+id/vinculation_linear_layout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/vinculation_textView"
-                    android:layout_width="183dp"
-                    android:layout_height="match_parent"
-                    android:text="@string/vinculo"
-                    android:textSize="17sp"
-                    android:drawableStart="@drawable/education"
-                    android:drawablePadding="7dp" />
-
-                <Spinner
-                    android:id="@+id/vinculation_spinner"
-                    android:layout_width="170dp"
-                    android:layout_height="match_parent"
-                    android:entries="@array/vinculation_list"
-                    android:theme="@android:style/Theme.DeviceDefault.DayNight" />
-
-            </LinearLayout>
-
             <Button
                 android:id="@+id/bttn_register"
                 android:layout_width="173dp"
