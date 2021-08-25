@@ -67,4 +67,11 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="phone_example">000000</string>
+    <string name="phone_value">Teléfono: %s</string>
+    <string name="amount_value">Valor de la deuda: $%s</string>
+    <string name="accept">Aceptar</string>
+    <string name="negative">No</string>
+    <string name="cancel">Cancelar</string>
+    <string name="search">Buscar</string>
 </resources>
