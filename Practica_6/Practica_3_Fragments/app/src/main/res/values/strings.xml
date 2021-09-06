@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Practica 3 (SIGILO)</string>
+    <string name="login_tittle">Mi Cuenta</string>
+    <string name="register_tittle">Registro</string>
+    <string name="applicationName">SIGILO</string>
+    <string name="madeBy">Hecho por/ David Bonett y Juan Pablo Monsalve</string>
+    <string name="name">Nombre Completo</string>
+    <string name="cel">Teléfono</string>
+    <string name="required_field">*Campo requerido</string>
+    <string name="rep_password">Repita la contraseña</string>
+    <string name="genre">Género</string>
+    <string name="vinculo">Vinculación con la universidad:</string>
+    <string name="email">Correo Electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="bttn_login">Entrar</string>
+    <string name="bttn_register">Regístrate</string>
+    <string name="logo_imageView">imagen del logo</string>
+    <string name="register_textview">Eres nuevo aquí?</string>
+    <string name="todo">TODO</string>
+    <string name="textview">TextView</string>
+    <string name="name_required">El nombre debe contener mínimo 6 letras</string>
+    <string name="password_required">*La contraseña debe contener mínimo 6 carácteres</string>
+    <string name="email_required">Se requiere un correo electrónico válido</string>
+    <string name="phone_required">Se requiere un télefono válido sin espacios</string>
+    <string name="password_error">*La contraseña no coincide</string>
+    <string name="empty_field">Existen campos vacíos</string>
+    <string name="wrong_password">El email o la contraseña no coiciden</string>
+    <string name="back_pressed">Por favor presione nuevamente para salir</string>
+    <string name="wiii">:D</string>
+
+    <string-array name="vinculation_list">
+        <item>Estudiante</item>
+        <item>Egresado</item>
+        <item>Profesor</item>
+    </string-array>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_logout">Logout</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+</resources>
