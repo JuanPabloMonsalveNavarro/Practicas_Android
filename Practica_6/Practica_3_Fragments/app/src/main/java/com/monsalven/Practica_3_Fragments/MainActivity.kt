@@ -54,9 +54,9 @@ class MainActivity : AppCompatActivity() {
         val headerView = navigationView.getHeaderView(0)
 
         val navUsername = headerView.findViewById<TextView>(R.id.textViewUserName) as TextView
-        navUsername.text = usuario_registrado.name
+        //navUsername.text = usuario_registrado.name
         val navUserEmail = headerView.findViewById<TextView>(R.id.textViewUserEmail) as TextView
-        navUserEmail.text = usuario_registrado.email
+        //navUserEmail.text = usuario_registrado.email
 
     }
 

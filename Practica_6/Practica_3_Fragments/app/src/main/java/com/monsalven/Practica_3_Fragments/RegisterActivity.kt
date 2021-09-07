@@ -12,18 +12,25 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.monsalven.Practica_3_Fragments.databinding.ActivityRegisterBinding
 import com.monsalven.Practica_3_Fragments.extension.isValidEmail
 import com.monsalven.Practica_3_Fragments.extension.isValidPhone
 import com.monsalven.Practica_3_Fragments.extension.validate
+import com.monsalven.Practica_3_Fragments.model.User
 
-var usuario_registrado = User(); //usuario global
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var registerBinding: ActivityRegisterBinding
 
+    lateinit var name : String
+    lateinit var email  : String
+    lateinit var phone  : String
+    lateinit var password : String
+    lateinit var repPassword : String
+    lateinit var vinculation : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,14 +55,17 @@ class RegisterActivity : AppCompatActivity() {
         val loginCardView = findViewById<CardView>(R.id.login_cardView)
         loginCardView.startAnimation(btt)
 
+
+
+
         /*Acciones a realizar cuando se presione el boton de registro*/
         registerBinding.bttnRegister.setOnClickListener {
-            val name = registerBinding.userNameEditText.text.toString()
-            val email = registerBinding.emailEditText.text.toString()
-            val phone = registerBinding.phoneEditText.text.toString()
-            val password = registerBinding.passwordEditText.text.toString()
-            val repPassword = registerBinding.repPasswordEditText.text.toString()
-            val vinculation = registerBinding.vinculationSpinner.selectedItem.toString()
+            name = registerBinding.userNameEditText.text.toString()
+            email = registerBinding.emailEditText.text.toString()
+            phone = registerBinding.phoneEditText.text.toString()
+            password = registerBinding.passwordEditText.text.toString()
+            repPassword = registerBinding.repPasswordEditText.text.toString()
+            vinculation = registerBinding.vinculationSpinner.selectedItem.toString()
 
             /*Verificación de la coincidencia entre contraseñas y campos vacíos*/
             if (name.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty() || repPassword.isEmpty()) {
@@ -71,7 +81,7 @@ class RegisterActivity : AppCompatActivity() {
                         .addOnCompleteListener() { task ->
                             if (task.isSuccessful) {
                                 Log.d("register", "createUserWithEmail:success")
-                                val user = auth.currentUser
+                                createUser()
                                 Toast.makeText(baseContext, "Registro exitoso",
                                     Toast.LENGTH_SHORT).show()
                                 startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
@@ -93,8 +103,27 @@ class RegisterActivity : AppCompatActivity() {
 
                 }
             }
+
         }
     }
+    private fun createUser() {
+        var id = auth.currentUser?.uid
+        id?.let{ id ->
+            val user = User(id = id, email = email, name = name, phone = phone, vinculation = vinculation)
+            val db = Firebase.firestore
+            db.collection("users").document(id)
+                .set(user)
+                .addOnSuccessListener { documentReference ->
+                    Log.d("createInDB", "DocumentSnapshot added with ID: ${id}")
+                }
+                .addOnFailureListener { e ->
+                    Log.w("createInDB", "Error adding document", e)
+                }
+        }
+
+    }
+
+
 
     /*Definición del textWatcher para verificar que la contraseña tenga el número necesario de carácteres*/
     private val textWatcher = object : TextWatcher {
@@ -108,12 +137,15 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
     }
+
 }
 
+/*
 private fun save_user(name: String, email: String, phone: String, password: String, vinculation: String) {
     usuario_registrado.name = name;
     usuario_registrado.email = email;
     usuario_registrado.phone = phone;
     usuario_registrado.password = password;
     usuario_registrado.vinculation = vinculation;
-}
+}*/
+

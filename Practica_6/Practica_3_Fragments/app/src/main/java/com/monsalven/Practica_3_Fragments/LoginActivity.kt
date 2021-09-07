@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.monsalven.Practica_3_Fragments.databinding.ActivityLoginBinding
-import com.monsalven.Practica_3_Fragments.extension.compare_users
+import com.monsalven.Practica_3_Fragments.model.User
 
 class LoginActivity : AppCompatActivity() {
 
@@ -49,8 +49,6 @@ class LoginActivity : AppCompatActivity() {
         var email = objectIntent.getStringExtra("email")
         var password = objectIntent.getStringExtra("password")
 
-        loginBinding.userNameEditText.setText(usuario_registrado.email)
-        loginBinding.passwordEditText.setText(usuario_registrado.password)
 
         /*Acciones a realizar cuando se presione el boton de registro*/
         loginBinding.bttnRegister.setOnClickListener {
@@ -60,12 +58,10 @@ class LoginActivity : AppCompatActivity() {
         /*Acciones a realizar cuando se presione el boton de Entrar*/
         loginBinding.bttnLogin.setOnClickListener {
 
-            var nuevo_usuario = User() //usuario
+
             val email = loginBinding.userNameEditText.text.toString()
             val password = loginBinding.passwordEditText.text.toString()
 
-            nuevo_usuario.email = email//****************************************************************REVISAR**************************
-            nuevo_usuario.password = password
 
             /*Se comparan el nuevo_usuario y el usuario_registrado*/
 
