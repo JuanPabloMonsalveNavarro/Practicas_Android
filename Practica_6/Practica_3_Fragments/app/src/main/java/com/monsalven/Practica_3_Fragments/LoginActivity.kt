@@ -9,6 +9,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.monsalven.Practica_3_Fragments.databinding.ActivityLoginBinding
 import com.monsalven.Practica_3_Fragments.extension.compare_users
 
@@ -16,10 +19,15 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var loginBinding: ActivityLoginBinding
 
+    private lateinit var auth: FirebaseAuth;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         loginBinding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(loginBinding.root)
+
+        /*Cosas del Firebase*/
+        auth = Firebase.auth
 
         /*Declaración y Activasión de animaciones*/
         val ttb = AnimationUtils.loadAnimation(this, R.anim.ttb)
@@ -60,12 +68,17 @@ class LoginActivity : AppCompatActivity() {
             /*Se comparan el nuevo_usuario y el usuario_registrado*/
 
             if (!email.isEmpty() || !password.isEmpty()) {
+                /* Login viejo
                 if (compare_users(nuevo_usuario, usuario_registrado)) {
                     startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                 } else {
                     //Se realizan las dos verificaciones correspondientes
                     Toast.makeText(this, getString(R.string.wrong_password), Toast.LENGTH_SHORT).show()
-                }
+                }*/
+
+                /*Login con el Firebase*/
+
+
             } else {
                 Toast.makeText(this, getString(R.string.empty_field), Toast.LENGTH_SHORT).show()
             }
