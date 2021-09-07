@@ -2,6 +2,7 @@ package com.monsalven.Practica_3_Fragments
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -58,11 +59,12 @@ class LoginActivity : AppCompatActivity() {
 
         /*Acciones a realizar cuando se presione el boton de Entrar*/
         loginBinding.bttnLogin.setOnClickListener {
-            /*Almacenamiento dle nuevo que se intenta loggear*/
+
             var nuevo_usuario = User() //usuario
             val email = loginBinding.userNameEditText.text.toString()
             val password = loginBinding.passwordEditText.text.toString()
-            nuevo_usuario.email = email
+
+            nuevo_usuario.email = email//****************************************************************REVISAR**************************
             nuevo_usuario.password = password
 
             /*Se comparan el nuevo_usuario y el usuario_registrado*/
@@ -77,13 +79,38 @@ class LoginActivity : AppCompatActivity() {
                 }*/
 
                 /*Login con el Firebase*/
-
+                signIn(email, password)
 
             } else {
                 Toast.makeText(this, getString(R.string.empty_field), Toast.LENGTH_SHORT).show()
             }
 
         }
+
+    }
+    private fun signIn(email : String,password :  String) {
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d("Login", "signInWithEmail:success")
+                    val user = auth.currentUser
+                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                    //updateUI(user)
+                } else {
+                    var msg = ""
+                    if(task.exception?.localizedMessage  == "The email address is badly formatted."){
+                        msg = "Digite un correo válido" }
+                    else if(task.exception?.localizedMessage  == "There is no user record corresponding to this identifier. The user may have been deleted."){
+                    msg = "No existe una cuenta con este correo"}
+                    else if(task.exception?.localizedMessage  == "The password is invalid or the user does not have a password."){
+                        msg = "Contraseña y/o correo incorrecto"}
+                    Log.w("Login", "signInWithEmail:failure", task.exception)
+                    Toast.makeText(baseContext, msg,
+                        Toast.LENGTH_SHORT).show()
+                    //updateUI(null)
+                }
+            }
 
     }
 }
