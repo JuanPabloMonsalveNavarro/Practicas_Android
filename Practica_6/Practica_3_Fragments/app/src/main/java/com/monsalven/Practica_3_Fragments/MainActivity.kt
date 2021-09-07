@@ -2,6 +2,7 @@ package com.monsalven.Practica_3_Fragments
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
@@ -17,15 +18,26 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private var backPressedTime = 0L
+    private lateinit var auth: FirebaseAuth
+
+
 
     //val header_view = navigationView.findViewById<TextView>(R.id.textView)
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        /*Firebase*/
+        val db = Firebase.firestore
+        auth = Firebase.auth
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
@@ -54,7 +66,17 @@ class MainActivity : AppCompatActivity() {
         val headerView = navigationView.getHeaderView(0)
 
         val navUsername = headerView.findViewById<TextView>(R.id.textViewUserName) as TextView
-        //navUsername.text = usuario_registrado.name
+        val id_current_auth = auth.currentUser?.uid
+        db.collection("prestamos")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    Log.d("nombre", "${document.id} => ${document.data}")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.w("nombre", "Error getting documents.", exception)
+            }
         val navUserEmail = headerView.findViewById<TextView>(R.id.textViewUserEmail) as TextView
         //navUserEmail.text = usuario_registrado.email
 
