@@ -43,6 +43,8 @@
     <string name="action_logout">Logout</string>
 
     <string name="menu_home">Home</string>
+    <string name="menu_inventory">Inventario</string>
     <string name="menu_gallery">Gallery</string>
+    <string name="name_example">Ejemploncio</string>
     <string name="menu_slideshow">Slideshow</string>
 </resources>

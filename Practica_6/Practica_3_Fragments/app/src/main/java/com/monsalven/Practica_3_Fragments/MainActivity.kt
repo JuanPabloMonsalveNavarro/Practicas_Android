@@ -43,11 +43,7 @@ class MainActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        val fab: FloatingActionButton = findViewById(R.id.fab)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
+
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
@@ -55,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_inventory
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -65,20 +61,23 @@ class MainActivity : AppCompatActivity() {
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
         val headerView = navigationView.getHeaderView(0)
 
-        val navUsername = headerView.findViewById<TextView>(R.id.textViewUserName) as TextView
+        var navUsername = headerView.findViewById<TextView>(R.id.textViewUserName) as TextView
+        val navUserEmail = headerView.findViewById<TextView>(R.id.textViewUserEmail) as TextView
         val id_current_auth = auth.currentUser?.uid
-        db.collection("prestamos")
+        db.collection("users")
+            .whereEqualTo("id", id_current_auth)
             .get()
             .addOnSuccessListener { result ->
                 for (document in result) {
-                    Log.d("nombre", "${document.id} => ${document.data}")
+                    Log.d("nombre", "${document.id} => ${document.data.getValue("name")}")
+                    navUsername.text = document.data.getValue("name").toString()
+                    navUserEmail.text = document.data.getValue("email").toString()
                 }
+
             }
             .addOnFailureListener { exception ->
                 Log.w("nombre", "Error getting documents.", exception)
             }
-        val navUserEmail = headerView.findViewById<TextView>(R.id.textViewUserEmail) as TextView
-        //navUserEmail.text = usuario_registrado.email
 
     }
 

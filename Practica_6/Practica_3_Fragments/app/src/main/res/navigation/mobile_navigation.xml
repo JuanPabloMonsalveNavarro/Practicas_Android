@@ -12,6 +12,12 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/nav_inventory"
+        android:name="com.monsalven.Practica_3_Fragments.ui.inventory.InventoryFragment"
+        android:label="@string/menu_inventory"
+        tools:layout="@layout/inventory_fragment" />
+
+    <fragment
         android:id="@+id/nav_gallery"
         android:name="com.monsalven.Practica_3_Fragments.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
