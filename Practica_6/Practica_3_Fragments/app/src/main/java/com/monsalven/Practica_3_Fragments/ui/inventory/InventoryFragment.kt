@@ -7,14 +7,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.monsalven.Practica_3_Fragments.databinding.InventoryFragmentBinding
+
 import com.monsalven.Practica_3_Fragments.R
 import com.monsalven.Practica_3_Fragments.model.Object
+import com.monsalven.Practica_3_Fragments.ui.addobject.AddObjectFragment
+
+import com.monsalven.Practica_3_Fragments.ui.gallery.GalleryFragment
+
 
 class InventoryFragment : Fragment() {
 
@@ -56,6 +63,22 @@ class InventoryFragment : Fragment() {
         */
 
         loadFromServer()
+
+
+       // val fab: FloatingActionButton = findViewById(R.id.fab)
+        //fab.setOnClickListener { view ->
+            //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show()
+       // }
+
+        with(binding){
+            fab.setOnClickListener{view ->
+                var fr = fragmentManager?.beginTransaction()
+                fr?.replace(com.monsalven.Practica_3_Fragments.R.id.nav_host_fragment, AddObjectFragment())
+                fr?.commit()
+
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show()
+            }
+        }
 
         return root
     }

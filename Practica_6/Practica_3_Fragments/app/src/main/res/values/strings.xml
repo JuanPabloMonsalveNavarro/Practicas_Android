@@ -47,4 +47,9 @@
     <string name="menu_gallery">Gallery</string>
     <string name="name_example">Ejemploncio</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="add_string">Agregar</string>
+    <string name="name_object_hint">Nombre del objeto</string>
+    <string name="state_object_hint">Describa el estado del objeto</string>
+    <string name="status_object_hint">estatus</string>
+    <string name="cancel_string">Cancelar</string>
 </resources>
