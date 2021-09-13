@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.monsalven.Practica_3_Fragments.R
 import com.monsalven.Practica_3_Fragments.databinding.CardViewObjectsItemBinding
 import com.monsalven.Practica_3_Fragments.model.Object
+import com.squareup.picasso.Picasso
 
 class ObjectAdabter : RecyclerView.Adapter<ObjectAdabter.ViewHolder>(){
 
@@ -42,6 +43,9 @@ class ObjectAdabter : RecyclerView.Adapter<ObjectAdabter.ViewHolder>(){
             with(binding){
                 nameTextView.text = obje.name
                 statusTextView.text = obje.status
+                if (obje.urlPicture != null){
+                    Picasso.get().load(obje.urlPicture).into(objectImageView)
+                }
             }
         }
     }
