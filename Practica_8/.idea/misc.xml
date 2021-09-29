@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/piblo/Documents/Udea/2021-1/Moviles/Practicas_Android/Practica_8/app/src/main/res/layout/activity_main.xml" value="0.2033514492753623" />
+        <entry key="..\:/Users/piblo/Documents/Udea/2021-1/Moviles/Practicas_Android/Practica_8/app/src/main/res/layout/activity_main.xml" value="0.19701086956521738" />
+        <entry key="..\:/Users/piblo/Documents/Udea/2021-1/Moviles/Practicas_Android/Practica_8/app/src/main/res/layout/anime_list_item.xml" value="0.33" />
+        <entry key="..\:/Users/piblo/Documents/Udea/2021-1/Moviles/Practicas_Android/Practica_8/app/src/main/res/layout/fragment_detail.xml" value="0.19701086956521738" />
+        <entry key="..\:/Users/piblo/Documents/Udea/2021-1/Moviles/Practicas_Android/Practica_8/app/src/main/res/layout/fragment_list.xml" value="0.19701086956521738" />
       </map>
     </option>
   </component>
