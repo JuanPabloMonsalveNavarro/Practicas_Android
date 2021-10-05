@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "582603818497",
+    "project_id": "sigilo-f34dc",
+    "storage_bucket": "sigilo-f34dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582603818497:android:0a117fd10cc19d67cae200",
+        "android_client_info": {
+          "package_name": "com.monsalven.practica_3_Fragments"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582603818497-q0lg6c36p2fl7ads43idrilobq6ub4bc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEmdYSyXSS4PePqvb00AOkU6ZAj5MmLyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "582603818497-q0lg6c36p2fl7ads43idrilobq6ub4bc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
