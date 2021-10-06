@@ -25,8 +25,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.zxing.integration.android.IntentIntegrator
 
 import com.google.zxing.integration.android.IntentResult
-
-
+import com.monsalven.Practica_3_Fragments.ui.addobject.texto
 
 
 class MainActivity : AppCompatActivity() {
@@ -92,6 +91,7 @@ class MainActivity : AppCompatActivity() {
             if (result.contents == null) {
                 Toast.makeText(this, "Cancelado", Toast.LENGTH_LONG).show()
             } else {
+                texto = result.contents;
                 Toast.makeText(this, "El valor escaneado es: " + result.contents, Toast.LENGTH_LONG).show()
             }
         } else {
