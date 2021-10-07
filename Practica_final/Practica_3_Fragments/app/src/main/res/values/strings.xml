@@ -52,4 +52,9 @@
     <string name="state_object_hint">Describa el estado del objeto</string>
     <string name="status_object_hint">estatus</string>
     <string name="cancel_string">Cancelar</string>
+    <string name="Object_string">Elemento</string>
+    <string name="Object_state_string">Condiciones físicas del elemento</string>
+    <string name="lend_object_string">Realizar préstamo</string>
+    <string name="add_lend_string">Agregar préstamo</string>
+    <string name="load">Cargar Elemento</string>
 </resources>

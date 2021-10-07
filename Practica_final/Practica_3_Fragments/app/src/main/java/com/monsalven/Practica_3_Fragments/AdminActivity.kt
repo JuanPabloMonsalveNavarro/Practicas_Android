@@ -22,15 +22,14 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.zxing.integration.android.IntentIntegrator
 
-var texto:  String ="";
 
 
-class MainActivity : AppCompatActivity() {
+class AdminActivity : AppCompatActivity() {
+
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private var backPressedTime = 0L
     private lateinit var auth: FirebaseAuth
-
 
 
     //val header_view = navigationView.findViewById<TextView>(R.id.textView)
@@ -88,8 +87,9 @@ class MainActivity : AppCompatActivity() {
             if (result.contents == null) {
                 Toast.makeText(this, "Cancelado", Toast.LENGTH_LONG).show()
             } else {
-                texto = result.contents;
-                Toast.makeText(this, "El valor escaneado es: " + result.contents, Toast.LENGTH_LONG).show()
+                //texto = result.contents;
+                Toast.makeText(this, "El valor escaneado es: " + result.contents, Toast.LENGTH_LONG)
+                    .show()
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data)
@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_logout -> {
-                startActivity(Intent(this@MainActivity, LoginActivity::class.java))
+                startActivity(Intent(this@AdminActivity, LoginActivity::class.java))
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -120,13 +120,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if(backPressedTime + 2000 > System.currentTimeMillis()){
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
             finishAffinity()
             finish()
-        }
-        else {
+        } else {
             Toast.makeText(this, getString(R.string.back_pressed), Toast.LENGTH_SHORT).show()
         }
         backPressedTime = System.currentTimeMillis()
     }
 }
+
+
+
+
+
+
+
+

@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.zxing.integration.android.IntentIntegrator
 import com.monsalven.Practica_3_Fragments.databinding.ActivityLoginBinding
@@ -30,6 +31,7 @@ class LoginActivity : AppCompatActivity() {
 
         /*Cosas del Firebase*/
         auth = Firebase.auth
+
 
         /*Declaración y Activasión de animaciones*/
         val ttb = AnimationUtils.loadAnimation(this, R.anim.ttb)
@@ -69,14 +71,6 @@ class LoginActivity : AppCompatActivity() {
             /*Se comparan el nuevo_usuario y el usuario_registrado*/
 
             if (!email.isEmpty() || !password.isEmpty()) {
-                /* Login viejo
-                if (compare_users(nuevo_usuario, usuario_registrado)) {
-                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-                } else {
-                    //Se realizan las dos verificaciones correspondientes
-                    Toast.makeText(this, getString(R.string.wrong_password), Toast.LENGTH_SHORT).show()
-                }*/
-
                 /*Login con el Firebase*/
                 signIn(email, password)
 
@@ -88,14 +82,38 @@ class LoginActivity : AppCompatActivity() {
 
     }
     private fun signIn(email : String,password :  String) {
+        val db = Firebase.firestore
+        var admin_p: Boolean = false;
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d("Login", "signInWithEmail:success")
-                    val user = auth.currentUser
-                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-                    //updateUI(user)
+                    val user_id = auth.currentUser?.uid
+                    db.collection("users")
+                        .whereEqualTo("id", user_id)
+                        .get()
+                        .addOnSuccessListener { result ->
+                            for (document in result) {
+                                Log.d("poderes", "${document.id} => ${document.data.getValue("adminpower")}")
+                                //println(document.data.getValue("adminpower").toString())
+                                admin_p = document.data.getValue("adminpower").toString().toBoolean()
+                            }
+                            print("admin_p -> ")
+                            println(admin_p)
+                            if(admin_p){
+                                startActivity(Intent(this@LoginActivity, AdminActivity::class.java))
+                                println("Me fui por la ruta admin")
+                            }else{
+                                startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                                println("Me fui por la ruta normal user")
+                            }
+
+                        }
+                        .addOnFailureListener { exception ->
+                            Log.w("nombre", "Error getting documents.", exception)
+                        }
+
                 } else {
                     var msg = ""
                     if(task.exception?.localizedMessage  == "The email address is badly formatted."){

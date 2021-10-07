@@ -109,7 +109,7 @@ class RegisterActivity : AppCompatActivity() {
     private fun createUser() {
         var id = auth.currentUser?.uid
         id?.let{ id ->
-            val user = User(id = id, email = email, name = name, phone = phone, vinculation = vinculation)
+            val user = User(id = id, email = email, name = name, phone = phone, vinculation = vinculation, adminpower = false)
             val db = Firebase.firestore
             db.collection("users").document(id)
                 .set(user)

@@ -35,7 +35,7 @@ import com.monsalven.Practica_3_Fragments.model.Object
 import java.io.ByteArrayOutputStream
 import java.sql.Types
 
-var texto:  String ="hola";
+
 class AddObjectFragment : Fragment() {
 
     private lateinit var createViewModel: AddObjectViewModel
@@ -86,9 +86,6 @@ class AddObjectFragment : Fragment() {
                 initScanner();
             }
 
-            imageView3.setOnClickListener {
-                textView.text = texto;
-            }
 
             addButton.setOnClickListener{
                 savePicture()
@@ -116,6 +113,8 @@ class AddObjectFragment : Fragment() {
         integrator.setBarcodeImageEnabled(false)
         integrator.initiateScan();
     }
+
+
 
 
 

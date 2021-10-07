@@ -5,5 +5,6 @@ data class User(
         var name: String? = null,
         var email: String? = null,
         var phone: String? = null,
-        var vinculation: String? = null
+        var vinculation: String? = null,
+        var adminpower: Boolean? = null
 )
