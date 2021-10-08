@@ -102,8 +102,10 @@ class LoginActivity : AppCompatActivity() {
                             print("admin_p -> ")
                             println(admin_p)
                             if(admin_p){
-                                startActivity(Intent(this@LoginActivity, AdminActivity::class.java))
+
                                 println("Me fui por la ruta admin")
+                                startActivity(Intent(this@LoginActivity, AdminActivity::class.java))
+
                             }else{
                                 startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                                 println("Me fui por la ruta normal user")

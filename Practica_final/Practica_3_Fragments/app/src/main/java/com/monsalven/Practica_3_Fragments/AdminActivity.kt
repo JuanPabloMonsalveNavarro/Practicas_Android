@@ -22,12 +22,13 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.zxing.integration.android.IntentIntegrator
 
-class AdminActivity : AppCompatActivity() {
 
+class AdminActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private var backPressedTime = 0L
     private lateinit var auth: FirebaseAuth
+
 
 
     //val header_view = navigationView.findViewById<TextView>(R.id.textView)
@@ -38,9 +39,9 @@ class AdminActivity : AppCompatActivity() {
         auth = Firebase.auth
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_admin)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
+//        setSupportActionBar(toolbar)
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
@@ -85,9 +86,8 @@ class AdminActivity : AppCompatActivity() {
             if (result.contents == null) {
                 Toast.makeText(this, "Cancelado", Toast.LENGTH_LONG).show()
             } else {
-                //texto = result.contents;
-                Toast.makeText(this, "El valor escaneado es: " + result.contents, Toast.LENGTH_LONG)
-                    .show()
+                texto = result.contents;
+                Toast.makeText(this, "El valor escaneado es: " + result.contents, Toast.LENGTH_LONG).show()
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data)
@@ -118,20 +118,13 @@ class AdminActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+        if(backPressedTime + 2000 > System.currentTimeMillis()){
             finishAffinity()
             finish()
-        } else {
+        }
+        else {
             Toast.makeText(this, getString(R.string.back_pressed), Toast.LENGTH_SHORT).show()
         }
         backPressedTime = System.currentTimeMillis()
     }
 }
-
-
-
-
-
-
-
-
