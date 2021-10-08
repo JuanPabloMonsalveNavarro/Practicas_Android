@@ -56,7 +56,6 @@ class AddLendFragment : Fragment() {
 
     val db = Firebase.firestore
     private var auth: FirebaseAuth = Firebase.auth
-
     var id_lender: String? = auth.currentUser?.uid
     val obj = Object();
 
@@ -121,7 +120,7 @@ class AddLendFragment : Fragment() {
 
             lendButton.setOnClickListener {
                 lendButton.isEnabled = false
-                
+
                 if(texto != ""){saveLend(obj,id_lender.toString())}
 
             }

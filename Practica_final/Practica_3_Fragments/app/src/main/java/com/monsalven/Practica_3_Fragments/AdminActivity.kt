@@ -22,8 +22,6 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.zxing.integration.android.IntentIntegrator
 
-
-
 class AdminActivity : AppCompatActivity() {
 
 
@@ -51,7 +49,7 @@ class AdminActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_lend, R.id.nav_mypastlends, R.id.nav_slideshow, R.id.nav_inventory
+                R.id.nav_lend, R.id.nav_mypastlends, R.id.nav_my_profile, R.id.nav_inventory
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

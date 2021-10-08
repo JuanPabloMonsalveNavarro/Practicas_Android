@@ -60,4 +60,7 @@
     <string name="SuccesLend">Prestamo realizado</string>
     <string name="my_lends_string">"Mis préstamos "</string>
     <string name="ced_string">Digite su cedula</string>
+    <string name="name_light">Nombre</string>
+    <string name="my_profile">Mi perfil</string>
+    <string name="update_string">Actualizar información</string>
 </resources>

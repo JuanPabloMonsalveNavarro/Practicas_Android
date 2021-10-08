@@ -122,7 +122,7 @@ class RegisterActivity : AppCompatActivity() {
     private fun createUser() {
         var id = auth.currentUser?.uid
         id?.let{ id ->
-            val user = User(id = id, email = email, name = name, phone = phone, vinculation = vinculation,ced = ced, adminpower = false)
+            val user = User(id = id, email = email, name = name, phone = phone, vinculation = vinculation,ced = ced, adminpower = false, urlPicture = "https://firebasestorage.googleapis.com/v0/b/sigilo-f34dc.appspot.com/o/85622928-icono-de-perfil-de-avatar-predeterminado-marcador-de-posici%C3%B3n-de-foto-gris-vectores-de-ilustraciones.jpg?alt=media&token=d9a52bdd-6909-4d0b-bf80-43d22ee76502")
             val db = Firebase.firestore
             db.collection("users").document(id)
                 .set(user)

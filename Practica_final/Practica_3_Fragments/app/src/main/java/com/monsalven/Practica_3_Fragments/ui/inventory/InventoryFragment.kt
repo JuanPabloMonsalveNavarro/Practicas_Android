@@ -20,7 +20,7 @@ import com.monsalven.Practica_3_Fragments.R
 import com.monsalven.Practica_3_Fragments.model.Object
 import com.monsalven.Practica_3_Fragments.ui.addobject.AddObjectFragment
 
-import com.monsalven.Practica_3_Fragments.ui.gallery.GalleryFragment
+
 
 
 class InventoryFragment : Fragment() {

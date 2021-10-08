@@ -17,8 +17,8 @@
             android:icon="@drawable/ic_prest"
             android:title="@string/my_lends_string" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_my_profile"
+            android:icon="@drawable/user"
+            android:title="@string/my_profile" />
     </group>
 </menu>
