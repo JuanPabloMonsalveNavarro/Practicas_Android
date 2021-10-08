@@ -28,15 +28,20 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.UploadTask
 import com.google.zxing.integration.android.IntentIntegrator
+import com.monsalven.Practica_3_Fragments.AdminActivity
 import com.monsalven.Practica_3_Fragments.MainActivity
 import com.monsalven.Practica_3_Fragments.R
 import com.monsalven.Practica_3_Fragments.databinding.AddLendFragmentBinding
 import com.monsalven.Practica_3_Fragments.databinding.AddObjectFragmentBinding
+import com.monsalven.Practica_3_Fragments.model.Lend
 import com.monsalven.Practica_3_Fragments.model.Object
 import com.monsalven.Practica_3_Fragments.texto
 import com.monsalven.Practica_3_Fragments.ui.addobject.AddObjectViewModel
 import java.io.ByteArrayOutputStream
 import java.sql.Types
+import com.squareup.picasso.Picasso
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class AddLendFragment : Fragment() {
@@ -51,6 +56,9 @@ class AddLendFragment : Fragment() {
 
     private var urlImage: String? = null
     private var REQUEST_IMAGE_CAPTURE = 1000
+    val db = Firebase.firestore
+    val obj = Object();
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -82,13 +90,34 @@ class AddLendFragment : Fragment() {
 
             LoadButton.setOnClickListener {
                 LoadButton.isEnabled = false
-                /*Aquí se carga la info que está en texto*/
-                //saveLend()
+                lendButton.isEnabled = true
+                obj.id = texto
+                /*Aquí se carga la info del objeto  que está en texto*/
+                db.collection("Objects")
+                    .whereEqualTo("id", obj.id)
+                    .get()
+                    .addOnSuccessListener { result ->
+                        for (document in result) {
+                            Log.d("objetos", "${document.id} => ${document.data.getValue("name")}")
+                            obj.name = document.data.getValue("name").toString()
+                            obj.state = document.data.getValue("state").toString()
+                            obj.urlPicture = document.data.getValue("urlPicture").toString()
+
+                            objectNameTextView.text = obj.name
+                            objectStateTextView.text = obj.state
+
+
+                            if(obj.urlPicture!=null){
+                                Picasso.get().load(obj.urlPicture).into(objectToLendImageView)
+                            }
+                        }
+
+                    }
             }
 
             lendButton.setOnClickListener {
-                //saveLend();
-
+                lendButton.isEnabled = false
+                if(texto != ""){saveLend(obj)}
             }
 
 
@@ -97,8 +126,14 @@ class AddLendFragment : Fragment() {
         return root
     }
 
-    private fun saveLend() {
-
+    private fun saveLend(obj: Object) {
+        val date = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+        val currentDate = date.format(Date())
+        val documento = db.collection("Lends").document()
+        val id = documento.id
+        val lend = Lend(id = id, idObjeto = obj.id, name = obj.name, status = "Prestado", ced = "oritavemos_que_pedo", start_time = currentDate, finish_time = "En uso", urlPicture=obj.urlPicture)
+        db.collection("Lends").document(id).set(lend)
+        Toast.makeText(activity, getString(R.string.SuccesLend), Toast.LENGTH_SHORT).show()
     }
 
     private fun initScanner() {
