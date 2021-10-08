@@ -25,6 +25,7 @@ import com.google.zxing.integration.android.IntentIntegrator
 var texto:  String ="";
 
 
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration

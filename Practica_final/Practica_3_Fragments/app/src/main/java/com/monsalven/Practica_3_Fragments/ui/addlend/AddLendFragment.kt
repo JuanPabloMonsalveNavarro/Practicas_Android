@@ -23,19 +23,18 @@ import androidx.core.app.ActivityCompat.finishAffinity
 import androidx.lifecycle.Observer
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.UploadTask
 import com.google.zxing.integration.android.IntentIntegrator
-import com.monsalven.Practica_3_Fragments.AdminActivity
-import com.monsalven.Practica_3_Fragments.MainActivity
-import com.monsalven.Practica_3_Fragments.R
+import com.monsalven.Practica_3_Fragments.*
 import com.monsalven.Practica_3_Fragments.databinding.AddLendFragmentBinding
 import com.monsalven.Practica_3_Fragments.databinding.AddObjectFragmentBinding
 import com.monsalven.Practica_3_Fragments.model.Lend
 import com.monsalven.Practica_3_Fragments.model.Object
-import com.monsalven.Practica_3_Fragments.texto
 import com.monsalven.Practica_3_Fragments.ui.addobject.AddObjectViewModel
 import java.io.ByteArrayOutputStream
 import java.sql.Types
@@ -54,10 +53,15 @@ class AddLendFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    private var urlImage: String? = null
-    private var REQUEST_IMAGE_CAPTURE = 1000
+
     val db = Firebase.firestore
+    private var auth: FirebaseAuth = Firebase.auth
+
+    var id_lender: String? = auth.currentUser?.uid
     val obj = Object();
+
+
+
 
 
     override fun onCreateView(
@@ -117,7 +121,7 @@ class AddLendFragment : Fragment() {
 
             lendButton.setOnClickListener {
                 lendButton.isEnabled = false
-                if(texto != ""){saveLend(obj)}
+                if(texto != ""){saveLend(obj,id_lender.toString())}
             }
 
 
@@ -126,12 +130,12 @@ class AddLendFragment : Fragment() {
         return root
     }
 
-    private fun saveLend(obj: Object) {
+    private fun saveLend(obj: Object, id_lender: String) {
         val date = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
         val currentDate = date.format(Date())
         val documento = db.collection("Lends").document()
         val id = documento.id
-        val lend = Lend(id = id, idObjeto = obj.id, name = obj.name, status = "Prestado", ced = "oritavemos_que_pedo", start_time = currentDate, finish_time = "En uso", urlPicture=obj.urlPicture)
+        val lend = Lend(id = id, idObjeto = obj.id, name = obj.name, status = "Prestado", id_lender = id_lender, start_time = currentDate, finish_time = "En uso", urlPicture=obj.urlPicture)
         db.collection("Lends").document(id).set(lend)
         Toast.makeText(activity, getString(R.string.SuccesLend), Toast.LENGTH_SHORT).show()
     }

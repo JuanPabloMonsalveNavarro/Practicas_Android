@@ -5,7 +5,7 @@ data class Lend (
     var idObjeto: String? = null,
     var name: String? = null,
     var status: String? = null,
-    var ced: String? = null,
+    var id_lender: String? = null,
     var start_time: String? = null,
     var finish_time: String? = null,
     var urlPicture: String? =null
