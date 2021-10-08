@@ -121,7 +121,9 @@ class AddLendFragment : Fragment() {
 
             lendButton.setOnClickListener {
                 lendButton.isEnabled = false
+                
                 if(texto != ""){saveLend(obj,id_lender.toString())}
+
             }
 
 
@@ -133,11 +135,18 @@ class AddLendFragment : Fragment() {
     private fun saveLend(obj: Object, id_lender: String) {
         val date = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
         val currentDate = date.format(Date())
-        val documento = db.collection("Lends").document()
-        val id = documento.id
-        val lend = Lend(id = id, idObjeto = obj.id, name = obj.name, status = "Prestado", id_lender = id_lender, start_time = currentDate, finish_time = "En uso", urlPicture=obj.urlPicture)
-        db.collection("Lends").document(id).set(lend)
-        Toast.makeText(activity, getString(R.string.SuccesLend), Toast.LENGTH_SHORT).show()
+
+        if(obj.status != "Prestado"){
+            val documento = db.collection("Lends").document()
+            val id = documento.id
+            val lend = Lend(id = id, idObjeto = obj.id, name = obj.name, status = "Prestado", id_lender = id_lender, start_time = currentDate, finish_time = "En uso", urlPicture=obj.urlPicture)
+            db.collection("Lends").document(id).set(lend)
+            Toast.makeText(activity, getString(R.string.SuccesLend), Toast.LENGTH_SHORT).show()
+
+        }else{
+            Toast.makeText(activity, "Objeto no disponible", Toast.LENGTH_SHORT).show()
+        }
+
     }
 
     private fun initScanner() {

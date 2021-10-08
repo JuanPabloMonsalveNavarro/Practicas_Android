@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
@@ -27,6 +29,10 @@ class MyPastLendsFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+
+    private var auth: FirebaseAuth = Firebase.auth
+    var id_lender: String? = auth.currentUser?.uid
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -61,6 +67,7 @@ class MyPastLendsFragment : Fragment() {
         val db = Firebase.firestore
         db.collection("Lends")
             .whereEqualTo("status","Prestado")
+            .whereEqualTo("id_lender",id_lender)
             .get()
             .addOnSuccessListener { result ->
             var listLends : MutableList<Lend> = arrayListOf()

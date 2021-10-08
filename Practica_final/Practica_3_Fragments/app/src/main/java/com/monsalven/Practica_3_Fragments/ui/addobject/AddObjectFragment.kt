@@ -64,6 +64,9 @@ class AddObjectFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+
+
         createViewModel =
             ViewModelProvider(this).get(AddObjectViewModel::class.java)
 
@@ -119,8 +122,13 @@ class AddObjectFragment : Fragment() {
 
 
     private fun savePicture() {
+
+        val db = Firebase.firestore
+        val document = db.collection("Objects").document()
+        val id = document.id
+
         val storage = FirebaseStorage.getInstance()
-        val pictureRef = storage.reference.child("obajetos")
+        val pictureRef = storage.reference.child(id)
 
         binding.takePictureObjectImageView.isDrawingCacheEnabled = true
         binding.takePictureObjectImageView.buildDrawingCache()
@@ -140,7 +148,7 @@ class AddObjectFragment : Fragment() {
         }.addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 val downloadUri = task.result
-                saveObject(downloadUri.toString())
+                saveObject(downloadUri.toString(),id)
             } else {
                 // Handle failures
                 // ...
@@ -149,11 +157,11 @@ class AddObjectFragment : Fragment() {
 
     }
 
-    private fun saveObject(urlPicture: String) {
+    private fun saveObject(urlPicture: String, id: String) {
         with(binding){
             val name = nameEditText.text.toString()
             val state = stateEditText.text.toString()
-            createObject(name, state, urlPicture)
+            createObject(name, state, urlPicture, id)
         }
     }
     private fun dispatchTakePictureIntent() {
@@ -162,15 +170,15 @@ class AddObjectFragment : Fragment() {
         resultLaucher.launch(intent)
     }
 
-    private fun createObject(name: String, state: String, urlPicture: String) {
+    private fun createObject(name: String, state: String, urlPicture: String, id: String) {
         //val new_object : Object(name = name, )
         if (name.isEmpty() || state.isEmpty()) {
             //Toast.makeText(this, getString(R.string.empty_field), Toast.LENGTH_SHORT).show()
         }
         else{
             val db = Firebase.firestore
-            val document= db.collection("Objects").document()
-            val id = document.id
+            val document = db.collection("Objects").document()
+
             val Objeto = Object(id = id, name = name, state = state, status = "Disponible", urlPicture = urlPicture)
             db.collection("Objects").document(id).set(Objeto)
             cleanView()
