@@ -63,4 +63,7 @@
     <string name="name_light">Nombre</string>
     <string name="my_profile">Mi perfil</string>
     <string name="update_string">Actualizar información</string>
+    <string name="return_button_string">Marcar como entregado</string>
+    <string name="SuccesReturn">Elemento Entregado</string>
+    <string name="return_object_string">Registrar entrega</string>
 </resources>

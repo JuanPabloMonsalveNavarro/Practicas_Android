@@ -20,5 +20,9 @@
             android:id="@+id/nav_my_profile"
             android:icon="@drawable/user"
             android:title="@string/my_profile" />
+        <item
+            android:id="@+id/nav_return_object"
+            android:icon="@drawable/ic_return"
+            android:title="@string/return_object_string" />
     </group>
 </menu>

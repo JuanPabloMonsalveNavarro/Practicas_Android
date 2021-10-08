@@ -102,12 +102,16 @@ class AddLendFragment : Fragment() {
                     .addOnSuccessListener { result ->
                         for (document in result) {
                             Log.d("objetos", "${document.id} => ${document.data.getValue("name")}")
+
                             obj.name = document.data.getValue("name").toString()
                             obj.state = document.data.getValue("state").toString()
+                            obj.status = document.data.getValue("status").toString()
                             obj.urlPicture = document.data.getValue("urlPicture").toString()
 
                             objectNameTextView.text = obj.name
                             objectStateTextView.text = obj.state
+
+
 
 
                             if(obj.urlPicture!=null){
@@ -140,7 +144,14 @@ class AddLendFragment : Fragment() {
             val id = documento.id
             val lend = Lend(id = id, idObjeto = obj.id, name = obj.name, status = "Prestado", id_lender = id_lender, start_time = currentDate, finish_time = "En uso", urlPicture=obj.urlPicture)
             db.collection("Lends").document(id).set(lend)
+
+            obj.status = "Prestado"
+            db.collection("Objects").document(obj.id.toString()).set(obj)
+
+
+
             Toast.makeText(activity, getString(R.string.SuccesLend), Toast.LENGTH_SHORT).show()
+            texto = ""
 
         }else{
             Toast.makeText(activity, "Objeto no disponible", Toast.LENGTH_SHORT).show()

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.returnobject.ReturnObjectFragment">
+
+
+    <ImageView
+        android:id="@+id/qr_to_lend_image_view"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="19dp"
+        android:src="@drawable/ic_qr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Load_Button" />
+
+    <ImageView
+        android:id="@+id/object_to_lend_image_view"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="44dp"
+        android:src="@drawable/ic_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/object_name_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="51dp"
+        android:text="@string/Object_string"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/object_to_lend_image_view" />
+
+    <TextView
+        android:id="@+id/object_state_text_view"
+        android:layout_width="191dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="110dp"
+        android:text="@string/Object_state_string"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/object_name_text_view" />
+
+    <Button
+        android:id="@+id/return_button"
+        android:layout_width="187dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="106dp"
+        android:enabled="false"
+        android:text="@string/return_button_string"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qr_to_lend_image_view" />
+
+    <Button
+        android:id="@+id/Load_Button"
+        android:layout_width="220dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="16dp"
+        android:enabled="false"
+        android:text="@string/load"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/object_state_text_view"
+        app:rippleColor="@color/green_10" />
+</androidx.constraintlayout.widget.ConstraintLayout>
