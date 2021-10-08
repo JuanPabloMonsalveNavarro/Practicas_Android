@@ -1,6 +1,9 @@
 package com.monsalven.Practica_3_Fragments
 
+import android.provider.MediaStore
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -14,11 +17,13 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
 import com.monsalven.Practica_3_Fragments.databinding.ActivityRegisterBinding
 import com.monsalven.Practica_3_Fragments.extension.isValidEmail
 import com.monsalven.Practica_3_Fragments.extension.isValidPhone
 import com.monsalven.Practica_3_Fragments.extension.validate
 import com.monsalven.Practica_3_Fragments.model.User
+import java.io.ByteArrayOutputStream
 
 
 class RegisterActivity : AppCompatActivity() {
@@ -31,6 +36,7 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var password : String
     lateinit var repPassword : String
     lateinit var vinculation : String
+    lateinit var ced : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,6 +72,7 @@ class RegisterActivity : AppCompatActivity() {
             password = registerBinding.passwordEditText.text.toString()
             repPassword = registerBinding.repPasswordEditText.text.toString()
             vinculation = registerBinding.vinculationSpinner.selectedItem.toString()
+            ced = registerBinding.cedInputText.text.toString()
 
             /*Verificación de la coincidencia entre contraseñas y campos vacíos*/
             if (name.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty() || repPassword.isEmpty()) {
@@ -81,10 +88,15 @@ class RegisterActivity : AppCompatActivity() {
                         .addOnCompleteListener() { task ->
                             if (task.isSuccessful) {
                                 Log.d("register", "createUserWithEmail:success")
+
+
                                 createUser()
                                 Toast.makeText(baseContext, "Registro exitoso",
                                     Toast.LENGTH_SHORT).show()
                                 startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
+
+
+
                             } else {
                                 var msg = ""
                                 if(task.exception?.localizedMessage  == "The email address is badly formatted."){
@@ -99,17 +111,18 @@ class RegisterActivity : AppCompatActivity() {
                                     Toast.LENGTH_SHORT).show()
                             }
                         }
-
-
                 }
             }
 
         }
+
+
     }
+
     private fun createUser() {
         var id = auth.currentUser?.uid
         id?.let{ id ->
-            val user = User(id = id, email = email, name = name, phone = phone, vinculation = vinculation, adminpower = false)
+            val user = User(id = id, email = email, name = name, phone = phone, vinculation = vinculation,ced = ced, adminpower = false)
             val db = Firebase.firestore
             db.collection("users").document(id)
                 .set(user)

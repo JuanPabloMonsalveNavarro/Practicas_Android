@@ -6,5 +6,6 @@ data class User(
         var email: String? = null,
         var phone: String? = null,
         var vinculation: String? = null,
+        var ced: String? = null,
         var adminpower: Boolean? = null
 )

@@ -58,4 +58,6 @@
     <string name="add_lend_string">Agregar préstamo</string>
     <string name="load">Cargar Elemento</string>
     <string name="SuccesLend">Prestamo realizado</string>
+    <string name="my_lends_string">"Mis préstamos "</string>
+    <string name="ced_string">Digite su cedula</string>
 </resources>

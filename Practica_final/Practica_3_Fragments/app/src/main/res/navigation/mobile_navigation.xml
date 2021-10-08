@@ -18,10 +18,10 @@
         tools:layout="@layout/inventory_fragment" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.monsalven.Practica_3_Fragments.ui.gallery.GalleryFragment"
+        android:id="@+id/nav_mypastlends"
+        android:name="com.monsalven.Practica_3_Fragments.ui.mypastlends.MyPastLendsFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/my_past_lends_fragment" />
 
     <fragment
         android:id="@+id/nav_slideshow"

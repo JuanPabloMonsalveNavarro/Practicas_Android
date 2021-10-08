@@ -56,27 +56,15 @@ class InventoryFragment : Fragment() {
             adapter = objectsAdapter
             setHasFixedSize(false)
         }
-        /*
-        val debtorDAO: DebtorDao = DeudoresApp.database.DebtorDao()
-        val listDebtors: MutableList<Debtor> = debtorDAO.getDebtors()
-        debtorsAdapter.appendItems(listDebtors)
-        */
 
         loadFromServer()
 
-
-       // val fab: FloatingActionButton = findViewById(R.id.fab)
-        //fab.setOnClickListener { view ->
-            //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show()
-       // }
 
         with(binding){
             fab.setOnClickListener{view ->
                 var fr = fragmentManager?.beginTransaction()
                 fr?.replace(com.monsalven.Practica_3_Fragments.R.id.nav_host_fragment, AddObjectFragment())
                 fr?.commit()
-
-                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show()
             }
         }
 
@@ -100,7 +88,4 @@ class InventoryFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
-
-
 }

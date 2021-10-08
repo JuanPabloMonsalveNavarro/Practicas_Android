@@ -13,9 +13,9 @@
             android:icon="@drawable/ic_inventory"
             android:title="@string/menu_inventory" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:id="@+id/nav_mypastlends"
+            android:icon="@drawable/ic_prest"
+            android:title="@string/my_lends_string" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"

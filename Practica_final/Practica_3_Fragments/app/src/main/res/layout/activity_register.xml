@@ -14,8 +14,8 @@
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/main_register_login"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
         android:drawablePadding="5dp"
         android:text="@string/register_tittle"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
@@ -98,6 +98,22 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ced_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/ced_string"
+                app:errorEnabled="true"
+                app:passwordToggleEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ced_input_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -106,10 +122,10 @@
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:inputType="textPassword"
                     android:id="@+id/password_editText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -122,31 +138,31 @@
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:inputType="textPassword"
                     android:id="@+id/rep_password_editText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:id="@+id/vinculation_linear_layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="70dp"
                 android:orientation="horizontal">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/vinculation_textView"
-                    android:layout_width="183dp"
+                    android:layout_width="150dp"
                     android:layout_height="match_parent"
-                    android:text="@string/vinculo"
-                    android:textSize="17sp"
                     android:drawableStart="@drawable/education"
-                    android:drawablePadding="7dp" />
+                    android:drawablePadding="7dp"
+                    android:text="@string/vinculo"
+                    android:textSize="17sp" />
 
                 <Spinner
                     android:id="@+id/vinculation_spinner"
-                    android:layout_width="170dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:entries="@array/vinculation_list"
                     android:theme="@android:style/Theme.DeviceDefault.DayNight" />
@@ -156,7 +172,7 @@
             <Button
                 android:id="@+id/bttn_register"
                 android:layout_width="173dp"
-                android:layout_height="0dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="15dp"
