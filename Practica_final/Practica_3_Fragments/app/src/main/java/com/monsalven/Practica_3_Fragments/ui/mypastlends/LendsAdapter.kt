@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.monsalven.Practica_3_Fragments.R
 import com.monsalven.Practica_3_Fragments.databinding.CardViewObjectsItemBinding
 import com.monsalven.Practica_3_Fragments.model.Lend
-import com.monsalven.Practica_3_Fragments.model.Object
 import com.squareup.picasso.Picasso
 
 class LendsAdapter : RecyclerView.Adapter<LendsAdapter.ViewHolder>(){

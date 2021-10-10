@@ -17,6 +17,7 @@ import com.google.firebase.ktx.Firebase
 import com.monsalven.Practica_3_Fragments.databinding.MyPastLendsFragmentBinding
 
 import com.monsalven.Practica_3_Fragments.model.Lend
+
 //import com.monsalven.Practica_3_Fragments.ui.mypastlends.LendsAdapter
 
 

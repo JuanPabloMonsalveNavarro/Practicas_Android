@@ -33,4 +33,9 @@
         android:name="com.monsalven.Practica_3_Fragments.ui.returnobject.ReturnObjectFragment"
         android:label="return_object_fragment"
         tools:layout="@layout/return_object_fragment" />
+    <fragment
+        android:id="@+id/nav_historylends"
+        android:name="com.monsalven.Practica_3_Fragments.ui.historylends.HistoryLendsFragment"
+        android:label="history_lends_fragment"
+        tools:layout="@layout/history_lends_fragment" />
 </navigation>
