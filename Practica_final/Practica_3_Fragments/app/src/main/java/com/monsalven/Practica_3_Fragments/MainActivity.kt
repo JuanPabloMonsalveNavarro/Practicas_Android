@@ -119,7 +119,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
+    /*
     override fun onBackPressed() {
         if(backPressedTime + 2000 > System.currentTimeMillis()){
             finishAffinity()
@@ -129,5 +129,5 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, getString(R.string.back_pressed), Toast.LENGTH_SHORT).show()
         }
         backPressedTime = System.currentTimeMillis()
-    }
+    }*/
 }

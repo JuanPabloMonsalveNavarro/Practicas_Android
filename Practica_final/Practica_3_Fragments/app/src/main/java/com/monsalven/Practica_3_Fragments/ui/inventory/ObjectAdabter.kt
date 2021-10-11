@@ -42,7 +42,7 @@ class ObjectAdabter : RecyclerView.Adapter<ObjectAdabter.ViewHolder>(){
         fun bind(obje: Object){
             with(binding){
                 nameTextView.text = obje.name
-                statusTextView.text = obje.status
+                statusTextView.text = obje.state
                 if (obje.urlPicture != null){
                     Picasso.get().load(obje.urlPicture).into(objectImageView)
                 }

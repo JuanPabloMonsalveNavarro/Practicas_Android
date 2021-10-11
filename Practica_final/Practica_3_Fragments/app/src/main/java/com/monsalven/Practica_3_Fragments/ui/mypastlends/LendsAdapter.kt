@@ -10,7 +10,9 @@ import com.monsalven.Practica_3_Fragments.databinding.CardViewObjectsItemBinding
 import com.monsalven.Practica_3_Fragments.model.Lend
 import com.squareup.picasso.Picasso
 
-class LendsAdapter : RecyclerView.Adapter<LendsAdapter.ViewHolder>(){
+class LendsAdapter(
+    private val onItemClicked: (Lend) -> Unit,
+) : RecyclerView.Adapter<LendsAdapter.ViewHolder>(){
 
     private var listLend : MutableList<Lend> = mutableListOf()
 
@@ -24,6 +26,7 @@ class LendsAdapter : RecyclerView.Adapter<LendsAdapter.ViewHolder>(){
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(listLend[position])
+        holder.itemView.setOnClickListener { onItemClicked(listLend[position]) }
     }
 
     override fun getItemCount(): Int {

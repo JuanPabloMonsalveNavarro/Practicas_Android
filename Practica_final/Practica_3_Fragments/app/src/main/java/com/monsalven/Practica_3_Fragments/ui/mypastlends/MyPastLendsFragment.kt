@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -17,6 +18,7 @@ import com.google.firebase.ktx.Firebase
 import com.monsalven.Practica_3_Fragments.databinding.MyPastLendsFragmentBinding
 
 import com.monsalven.Practica_3_Fragments.model.Lend
+import com.monsalven.Practica_3_Fragments.ui.historylends.HistoryLendsFragmentDirections
 
 //import com.monsalven.Practica_3_Fragments.ui.mypastlends.LendsAdapter
 
@@ -52,7 +54,7 @@ class MyPastLendsFragment : Fragment() {
             //textView.text = it
         })
 
-        lendsAdapter = LendsAdapter()
+        lendsAdapter = LendsAdapter(onItemClicked = {onLendItemClicked(it)})
         binding.debtorReclyclerView.apply {
             layoutManager = LinearLayoutManager(this@MyPastLendsFragment.context)
             adapter = lendsAdapter
@@ -62,6 +64,10 @@ class MyPastLendsFragment : Fragment() {
 
 
         return root
+    }
+
+    private fun onLendItemClicked(lend: Lend) {
+        findNavController().navigate(MyPastLendsFragmentDirections.actionNavMypastlendsToDetailhistoryFragment(lend))
     }
 
     private fun loadFromServer() {

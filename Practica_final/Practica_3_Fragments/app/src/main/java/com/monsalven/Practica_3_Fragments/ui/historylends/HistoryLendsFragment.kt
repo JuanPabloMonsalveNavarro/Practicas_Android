@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -55,7 +56,7 @@ class HistoryLendsFragment : Fragment() {
             //textView.text = it
         })
 
-        lendsAdapter = LendsAdapter()
+        lendsAdapter = LendsAdapter(onItemClicked = {onLendItemClicked(it)})
         binding.debtorReclyclerView.apply {
             layoutManager = LinearLayoutManager(this@HistoryLendsFragment.context)
             adapter = lendsAdapter
@@ -65,6 +66,10 @@ class HistoryLendsFragment : Fragment() {
 
 
         return root
+    }
+
+    private fun onLendItemClicked(lend: Lend) {
+        findNavController().navigate(HistoryLendsFragmentDirections.actionNavHistorylendsToDetailhistoryFragment(lend))
     }
 
     private fun loadFromServer() {
@@ -85,4 +90,6 @@ class HistoryLendsFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+
 }

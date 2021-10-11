@@ -52,7 +52,7 @@ class AdminActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_lend, R.id.nav_mypastlends, R.id.nav_my_profile, R.id.nav_inventory, R.id.nav_return_object, R.id.nav_historylends
+                R.id.nav_lend, R.id.nav_mypastlends, R.id.nav_my_profile, R.id.nav_inventory, R.id.nav_return_object, R.id.nav_historylends, R.id.detailhistoryFragment
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -61,9 +61,6 @@ class AdminActivity : AppCompatActivity() {
 
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
         val headerView = navigationView.getHeaderView(0)
-
-
-        //Picasso.get().load("obje.urlPicture").into(findViewById<ImageView>(R.layout.nav_header_main)as ImageView)
 
 
         var navImage = headerView.findViewById<ImageView>(R.id.imageView) as ImageView
@@ -83,7 +80,6 @@ class AdminActivity : AppCompatActivity() {
                     navUserEmail.text = document.data.getValue("email").toString()
                     Picasso.get().load(document.data.getValue("urlPicture").toString()).into(navImage)
                 }
-
             }
             .addOnFailureListener { exception ->
                 Log.w("nombre", "Error getting documents.", exception)
@@ -129,7 +125,7 @@ class AdminActivity : AppCompatActivity() {
         }
 
     }
-
+    /*
     override fun onBackPressed() {
         if(backPressedTime + 2000 > System.currentTimeMillis()){
             finishAffinity()
@@ -139,5 +135,5 @@ class AdminActivity : AppCompatActivity() {
             Toast.makeText(this, getString(R.string.back_pressed), Toast.LENGTH_SHORT).show()
         }
         backPressedTime = System.currentTimeMillis()
-    }
+    }*/
 }

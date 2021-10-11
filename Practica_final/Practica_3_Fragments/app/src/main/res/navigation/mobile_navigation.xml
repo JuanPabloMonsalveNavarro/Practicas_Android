@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/nav_lend"
         android:name="com.monsalven.Practica_3_Fragments.ui.addlend.AddLendFragment"
-        android:label="@string/menu_home"
+        android:label="Prestar Objeto"
         tools:layout="@layout/add_lend_fragment" />
 
     <fragment
@@ -20,22 +20,42 @@
     <fragment
         android:id="@+id/nav_mypastlends"
         android:name="com.monsalven.Practica_3_Fragments.ui.mypastlends.MyPastLendsFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/my_past_lends_fragment" />
+        android:label="Mis prestamos"
+        tools:layout="@layout/my_past_lends_fragment" >
+        <action
+            android:id="@+id/action_nav_mypastlends_to_detailhistoryFragment"
+            app:destination="@id/detailhistoryFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_my_profile"
         android:name="com.monsalven.Practica_3_Fragments.ui.myprofile.MyProfileFragment"
-        android:label="@string/menu_slideshow"
+        android:label="Mi perfil"
         tools:layout="@layout/my_profile_fragment" />
     <fragment
         android:id="@+id/nav_return_object"
         android:name="com.monsalven.Practica_3_Fragments.ui.returnobject.ReturnObjectFragment"
         android:label="return_object_fragment"
         tools:layout="@layout/return_object_fragment" />
+
     <fragment
         android:id="@+id/nav_historylends"
         android:name="com.monsalven.Practica_3_Fragments.ui.historylends.HistoryLendsFragment"
-        android:label="history_lends_fragment"
-        tools:layout="@layout/history_lends_fragment" />
+        android:label="Historial de prestamos"
+        tools:layout="@layout/history_lends_fragment" >
+        <action
+            android:id="@+id/action_nav_historylends_to_detailhistoryFragment"
+            app:destination="@id/detailhistoryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailhistoryFragment"
+        android:name="com.monsalven.Practica_3_Fragments.ui.historylends.HistoryDetailFragment"
+        android:label="Detalle del prestamos"
+        tools:layout="@layout/fragment_history_detail">
+        <argument
+            android:name="lend"
+            app:argType="com.monsalven.Practica_3_Fragments.model.Lend" />
+    </fragment>
+
 </navigation>
