@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +22,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.zxing.integration.android.IntentIntegrator
+import com.squareup.picasso.Picasso
 
 var texto:  String ="";
 
@@ -62,6 +64,7 @@ class MainActivity : AppCompatActivity() {
 
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
         val headerView = navigationView.getHeaderView(0)
+        var navImage = headerView.findViewById<ImageView>(R.id.imageView) as ImageView
 
         var navUsername = headerView.findViewById<TextView>(R.id.textViewUserName) as TextView
         val navUserEmail = headerView.findViewById<TextView>(R.id.textViewUserEmail) as TextView
@@ -74,6 +77,7 @@ class MainActivity : AppCompatActivity() {
                     Log.d("nombre", "${document.id} => ${document.data.getValue("name")}")
                     navUsername.text = document.data.getValue("name").toString()
                     navUserEmail.text = document.data.getValue("email").toString()
+                    Picasso.get().load(document.data.getValue("urlPicture").toString()).into(navImage)
                 }
 
             }

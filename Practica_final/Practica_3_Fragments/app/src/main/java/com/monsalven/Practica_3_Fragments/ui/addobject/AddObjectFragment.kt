@@ -28,6 +28,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.UploadTask
 import com.google.zxing.integration.android.IntentIntegrator
+import com.monsalven.Practica_3_Fragments.AdminActivity
 import com.monsalven.Practica_3_Fragments.MainActivity
 import com.monsalven.Practica_3_Fragments.R
 import com.monsalven.Practica_3_Fragments.databinding.AddObjectFragmentBinding
@@ -93,12 +94,12 @@ class AddObjectFragment : Fragment() {
             addButton.setOnClickListener{
                 savePicture()
 
-                val intent = Intent(context, MainActivity::class.java)
+                val intent = Intent(context, AdminActivity::class.java)
                 startActivity(intent)
             }
 
             cancelButton.setOnClickListener{
-                val intent = Intent(context, MainActivity::class.java)
+                val intent = Intent(context, AdminActivity::class.java)
                 startActivity(intent)
             }
 

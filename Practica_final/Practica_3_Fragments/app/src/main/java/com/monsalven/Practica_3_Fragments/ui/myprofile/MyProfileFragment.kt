@@ -72,6 +72,7 @@ class MyProfileFragment : Fragment() {
                     var phone = document.data.getValue("phone").toString()
                     var ced = document.data.getValue("ced").toString()
                     var url = document.data.getValue("urlPicture").toString()
+                    var adminpower = document.data.getValue("adminpower").toString()
                     var vinculation = document.data.getValue("vinculation").toString()
                     var hint_spinner: Int = 0
 
